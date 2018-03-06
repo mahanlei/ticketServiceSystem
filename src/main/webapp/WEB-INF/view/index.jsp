@@ -10,18 +10,10 @@
 <html>
 <head>
     <title>Index</title>
-    <script src="/Users/apple/MLProject/ticketServiceSystem/src/main/webapp/WEB-INF/statics/js/vue.min.js"></script>
+    <%--<script src="/Users/apple/MLProject/ticketServiceSystem/src/main/webapp/WEB-INF/statics/js/vue.min.js"></script>--%>
 </head>
 <body>
-<p id="app">{{message}}</p>
+<p >零零落落</p>
 
-<script>
-    new Vue({
-        el:'#app',
-        data:{
-            message:'aaa'
-        }
-    })
-</script>
 </body>
 </html>
