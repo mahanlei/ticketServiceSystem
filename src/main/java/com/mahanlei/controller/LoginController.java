@@ -1,6 +1,11 @@
 package com.mahanlei.controller;
 
+import com.mahanlei.Util.CodeUtil;
+import com.mahanlei.Util.MailUtil;
+import com.mahanlei.Util.Message;
 import com.mahanlei.factory.ServiceFactory;
+import com.mahanlei.model.MemberInfo;
+import com.mahanlei.service.MemberService;
 import com.mahanlei.service.UserService;
 import com.mahanlei.service.impl.UserServiceImpl;
 import net.sf.json.JSONObject;
@@ -19,6 +24,7 @@ import java.util.Map;
 public class LoginController {
     private static Logger log = LoggerFactory.getLogger(LoginController.class);
     UserService userService= ServiceFactory.getUserService();
+MemberService memberService=ServiceFactory.getMemberService();
     @RequestMapping(value = "/login" ,method=RequestMethod.POST)
     public JSONObject login(@RequestParam("account") String username, @RequestParam("password") String paw,HttpServletRequest request) {
 //        System.out.println(map.get("account"));
@@ -43,6 +49,38 @@ public class LoginController {
         return r;
 //        System.out.println(username);
     }
+    @RequestMapping(value="/register",method=RequestMethod.POST)
+public JSONObject register(@RequestParam("mid") String mid,@RequestParam("email") String email,
+                           @RequestParam("password") String password,@RequestParam("age") int age,HttpServletRequest request){
+      JSONObject jsonObject=new JSONObject();
+//        System.out.println(mid);
+        MemberInfo memberInfo=new MemberInfo(mid,age,email,0,0,0,  CodeUtil.generateUniqueCode());
+     Message message= memberService.doRegister(memberInfo,password);
+     if(message.equals(Message.REGISTER_SUCCESS)){
 
+         new Thread(new MailUtil("13585141983@163.com",memberInfo.getCode())).start();
+         jsonObject.put("code","200");
+         jsonObject.put("msg","注册成功");
+
+     }else{
+         jsonObject.put("code","500");
+         jsonObject.put("msg","用户名已存在");
+     }
+     return jsonObject;
+}
+    @RequestMapping(value="/register/activeMember",method=RequestMethod.POST)
+    public JSONObject activeMember(@RequestParam ("code") String code,HttpServletRequest request){
+        JSONObject jsonObject=new JSONObject();
+        System.out.println(code);
+        Boolean b= memberService.activeMember(code);
+        if(b){
+            jsonObject.put("code","200");
+            jsonObject.put("msg","成功激活");
+        }else {
+            jsonObject.put("code","500");
+            jsonObject.put("msg","失败激活");
+        }
+        return jsonObject;
+    }
     }
 

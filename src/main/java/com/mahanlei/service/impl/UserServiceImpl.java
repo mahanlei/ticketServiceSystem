@@ -12,6 +12,7 @@ private  static UserServiceImpl userService=new UserServiceImpl();
 public static UserServiceImpl getInstance(){
     return  userService;
 }
+
     public String getPassw(String uid) {
         UserDao userDao= DaoFactory.getUserDao();
        return userDao.findPassword(uid);
