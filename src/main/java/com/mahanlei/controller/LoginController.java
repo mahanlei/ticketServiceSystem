@@ -7,24 +7,16 @@ import com.mahanlei.factory.ServiceFactory;
 import com.mahanlei.model.MemberInfo;
 import com.mahanlei.service.MemberService;
 import com.mahanlei.service.UserService;
-import com.mahanlei.service.impl.UserServiceImpl;
 import net.sf.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
-//@Controller
 @RestController
-
 @CrossOrigin(origins="http://localhost:8081")//允许跨域请求
 public class LoginController {
-    private static Logger log = LoggerFactory.getLogger(LoginController.class);
     UserService userService= ServiceFactory.getUserService();
-MemberService memberService=ServiceFactory.getMemberService();
+    MemberService memberService=ServiceFactory.getMemberService();
     @RequestMapping(value = "/login" ,method=RequestMethod.POST)
     public JSONObject login(@RequestParam("account") String username, @RequestParam("password") String paw,HttpServletRequest request) {
 //        System.out.println(map.get("account"));

@@ -85,4 +85,60 @@ public class MemberDaoImpl  implements MemberDao{
         }
       return num!=0;
     }
+
+    public MemberInfo getMemberInfo(String mid) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        int age=0;
+        String email=null;
+        int rank=0;
+        int points=0;
+        int state=0;
+        String  code=null;
+        try {
+            statement=connection.prepareStatement("SELECT * FROM memberinfo WHERE  mid=?");
+            statement.setString(1,mid);
+            resultSet=statement.executeQuery();
+            while (resultSet.next()){
+             age=resultSet.getInt("age");
+             email=resultSet.getString("email");
+             rank=resultSet.getInt("rank");
+             points=resultSet.getInt("points");
+             state=resultSet.getInt("state");
+             code=resultSet.getString("code");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+
+        }
+               MemberInfo memberInfo=new MemberInfo(mid,age,email,rank,points,state,code);
+          return memberInfo;
+
+    }
+
+    public Message updateProfile(String  mid,int age, int state) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        int n=0;
+        try {
+            statement=connection.prepareStatement("update memberinfo SET age=?,state=? WHERE mid=? ");
+            statement.setInt(1,age);
+            statement.setInt(2,state);
+            statement.setString(3,mid);
+            n=statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+        if(n>0){
+            return Message.UPDATE_SUCCESS;
+        }else return Message.UPDATE_FAILED;
+
+    }
 }

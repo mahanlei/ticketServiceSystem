@@ -16,4 +16,17 @@ public interface MemberDao {
      * @return 更新memberinfo (state=1)
      */
     public boolean activeMember(String code);
+    /**
+     * 根据mid获取相应会员的信息
+     * @param mid
+     * @return
+     */
+    public MemberInfo getMemberInfo(String mid);
+    /**
+     * @param mid
+     *@param state
+     * @param age
+     * @return 更新memberinfo表中的 age,state
+     */
+    public  Message updateProfile(String mid,int age,int state);
 }

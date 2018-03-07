@@ -21,4 +21,16 @@ public class MemberServiceImpl implements MemberService {
     public boolean activeMember(String code) {
         return  DaoFactory.getMemberDao().activeMember(code);
     }
+
+    public MemberInfo getMemberInfo(String mid) {
+        return DaoFactory.getMemberDao().getMemberInfo(mid);
+    }
+
+    public Message changeProfile(String mid, int age, String state) {
+        int stateInt=0;
+        if(state.equals("会员")){
+            stateInt=1;
+        }
+        return DaoFactory.getMemberDao().updateProfile(mid,age,stateInt);
+    }
 }
