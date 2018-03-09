@@ -7,6 +7,9 @@ public enum Message {
     REGISTER_FAILED,
     UPDATE_SUCCESS,
     UPDATE_FAILED,
-
+    BUY_SUCCESS,
+    BUY_FAILED,
+    RELEASE_SUCCESS,
+    RELEASE_FAILED,
 
 }
