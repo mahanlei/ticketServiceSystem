@@ -29,9 +29,9 @@ public class DaoHelperImpl implements DaoHelper {
         }
         try {
             connection = DriverManager.getConnection(url,username,password);
-            System.out.println("Database get connect success");
+            System.out.println("==========Database get connect success==========");
         } catch (java.sql.SQLException e) {
-          System.out.println("Database get connect failure"  );
+          System.out.println("==========Database get connect failure=========="  );
             e.printStackTrace();
         }
         return connection;

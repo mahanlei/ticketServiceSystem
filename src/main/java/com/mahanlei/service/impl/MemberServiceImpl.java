@@ -2,6 +2,7 @@ package com.mahanlei.service.impl;
 
         import com.mahanlei.Util.Message;
         import com.mahanlei.factory.DaoFactory;
+        import com.mahanlei.model.DiscountCoupon;
         import com.mahanlei.model.MemberInfo;
         import com.mahanlei.service.MemberService;
 
@@ -30,5 +31,17 @@ public class MemberServiceImpl implements MemberService {
             stateInt=1;
         }
         return DaoFactory.getMemberDao().updateProfile(mid,age,stateInt);
+    }
+
+    public DiscountCoupon getDisInfo(String mid) {
+        return DaoFactory.getMemberDao().getDisInfo(mid);
+    }
+
+    public Message exchangeDis(DiscountCoupon discountCoupon) {
+       return DaoFactory.getMemberDao().addDis(discountCoupon);
+    }
+
+    public Message useDis(DiscountCoupon discountCoupon) {
+        return DaoFactory.getMemberDao().removeDis(discountCoupon);
     }
 }
