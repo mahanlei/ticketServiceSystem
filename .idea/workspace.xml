@@ -7,6 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ebe4b18-40ca-4215-a1b6-b952fcf3e515" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/Util/TransDataType$1.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/Util/TransDataType$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/Util/TransDataType.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/Util/TransDataType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/controller/LoginController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/controller/ShowController.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/controller/ShowController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/service/impl/MemberServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/service/impl/MemberServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/Util/TransDataType$1.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/Util/TransDataType$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/Util/TransDataType.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/Util/TransDataType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/controller/LoginController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/controller/ShowController.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/controller/ShowController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/service/impl/MemberServiceImpl.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/service/impl/MemberServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/Util/TransDataType.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/Util/TransDataType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/LoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/ShowController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/ShowController.java" />
@@ -70,7 +81,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.8088065">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/LoginController.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="463">
@@ -183,10 +194,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TransDataType.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TransDataType.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/Util/TransDataType.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="512">
+                <state relative-caret-position="1245">
                   <caret line="83" column="21" lean-forward="false" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -754,12 +765,12 @@
       <workItem from="1520064494639" duration="16705000" />
       <workItem from="1520319022437" duration="254000" />
       <workItem from="1520319324507" duration="33816000" />
-      <workItem from="1520578029559" duration="4833000" />
+      <workItem from="1520578029559" duration="4838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70001000" />
+    <option name="totallyTimeSpent" value="70006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1234,16 +1245,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/Util/TransDataType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="83" column="21" lean-forward="false" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/ShowController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -1285,6 +1286,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
           <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/Util/TransDataType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="83" column="21" lean-forward="false" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
