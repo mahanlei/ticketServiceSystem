@@ -1,5 +1,8 @@
 package com.mahanlei.Util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class TransDataType {
     public static ShowType intToShowType (int type){
         ShowType showType=null;
@@ -75,5 +78,9 @@ public class TransDataType {
 
         }
         return result;
+    }
+    public static String DateToString(Date date){
+        String dateStr = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date);
+      return dateStr;
     }
 }

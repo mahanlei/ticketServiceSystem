@@ -1,8 +1,6 @@
 package com.mahanlei.service.impl;
 
-        import com.mahanlei.Util.CodeUtil;
         import com.mahanlei.Util.Message;
-        import com.mahanlei.dao.DaoHelper;
         import com.mahanlei.factory.DaoFactory;
         import com.mahanlei.model.MemberInfo;
         import com.mahanlei.service.MemberService;

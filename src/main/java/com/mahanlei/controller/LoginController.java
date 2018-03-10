@@ -23,17 +23,18 @@ public class LoginController {
 //        log.info("登录请求...username="+map.get("account")+"  pwd=" + map.get("password"));
         JSONObject r = new JSONObject();
         String passw =  userService.getPassw(username);
+        MemberInfo memberInfo=memberService.getMemberInfo(username);
         if(username==null){
             r.put("code", "404");
             r.put("msg", "用户名不能为空");
         }
-        if(passw!=null&&passw.equals(paw)){
+        if(passw!=null&&passw.equals(paw)&&memberInfo.getState()==1){
             r.put("code", "200");
             r.put("msg", "登录成功");
 //            r.put("token", TokenUtil.getToken(username));
-        }else if(passw==null){
-            r.put("code", "500");
-            r.put("msg", "密码不正确或用户名不存在");
+        } else if (memberInfo.getState()!=1) {
+            r.put("code","500");
+            r.put("msg","此用户未通过邮箱验证激活");
         }else{
             r.put("code", "500");
             r.put("msg", "密码不正确或用户名不存在");
@@ -50,7 +51,7 @@ public JSONObject register(@RequestParam("mid") String mid,@RequestParam("email"
      Message message= memberService.doRegister(memberInfo,password);
      if(message.equals(Message.REGISTER_SUCCESS)){
 
-         new Thread(new MailUtil("13585141983@163.com",memberInfo.getCode())).start();
+         new Thread(new MailUtil(email,memberInfo.getCode())).start();
          jsonObject.put("code","200");
          jsonObject.put("msg","注册成功");
 
@@ -63,7 +64,7 @@ public JSONObject register(@RequestParam("mid") String mid,@RequestParam("email"
     @RequestMapping(value="/register/activeMember",method=RequestMethod.POST)
     public JSONObject activeMember(@RequestParam ("code") String code,HttpServletRequest request){
         JSONObject jsonObject=new JSONObject();
-        System.out.println(code);
+//        System.out.println(code);
         Boolean b= memberService.activeMember(code);
         if(b){
             jsonObject.put("code","200");
