@@ -36,6 +36,7 @@ import java.util.List;
     public  JSONObject getShowInfo(@RequestParam ("showId") int showId){
         JSONObject jsonObject=new JSONObject();
         ShowInfo showInfo=showService.getShowInfo(showId);
+        jsonObject.put("stadiumId",showInfo.getStadiumId());
         jsonObject.put("name",showInfo.getName());
         jsonObject.put("staName",showInfo.getStaName());
         jsonObject.put("address",showInfo.getAddress());

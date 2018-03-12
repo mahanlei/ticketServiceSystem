@@ -55,4 +55,12 @@ public interface MemberService {
      */
     public Message useDis(DiscountCoupon discountCoupon);
 
+    /**
+     * 当会员订单进行消费（checked)后，更新用户的会员等级
+     * @param mid
+     * @return
+     */
+
+    public Message updateMemRank(String mid);
+
 }

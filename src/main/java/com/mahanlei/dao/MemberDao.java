@@ -51,4 +51,19 @@ public interface MemberDao {
      * @return
      */
     public Message removeDis(DiscountCoupon discountCoupon);
+
+    /**
+     * 更新memberInfo表中的rank
+     * @param rank
+     * @return
+     */
+
+    public Message updateMemRank(String mid,int rank);
+
+    /**
+     * 获得某用户的消费总额
+     * @param mid
+     * @return
+     */
+    public double getConsumption(String mid);
 }

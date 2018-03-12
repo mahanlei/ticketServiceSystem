@@ -31,7 +31,6 @@ public class LoginController {
         if(passw!=null&&passw.equals(paw)&&memberInfo.getState()==1){
             r.put("code", "200");
             r.put("msg", "登录成功");
-//            r.put("token", TokenUtil.getToken(username));
         } else if (memberInfo.getState()!=1) {
             r.put("code","500");
             r.put("msg","此用户未通过邮箱验证激活");
