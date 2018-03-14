@@ -54,6 +54,38 @@ public class TicketDaoImpl implements TicketDao {
         return seatList;
     }
 
+    public List<Seat> getSeats(int showId, int stadiumId, int row) {
+        Connection connection=daoHelper.getConnection();
+        List<Seat> seatList=new ArrayList<Seat>();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        int seatRow=0;
+        int seatColumn=0;
+        double price=0.0;
+        int state=0;
+        try {
+            statement=connection.prepareStatement("SELECT seatColumn,price,state FROM seatinfo WHERE showId=? AND stadiumId=? AND seatRow=?");
+            statement.setInt(1,showId);
+            statement.setInt(2,stadiumId);
+            statement.setInt(3,row);
+            resultSet=statement.executeQuery();
+            while (resultSet.next()){
+                seatColumn=resultSet.getInt("seatColumn");
+                price=resultSet.getDouble("price");
+                state=resultSet.getInt("state");
+                Seat seat=new Seat(showId,stadiumId,row,seatColumn,price,state);
+                seatList.add(seat);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+        return seatList;
+    }
+
     public List<Seat> getUnoccupiedSeat(int showId, int stadiumId, int number) {
         Connection connection=daoHelper.getConnection();
         PreparedStatement statement=null;

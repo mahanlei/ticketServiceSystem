@@ -14,6 +14,7 @@ public interface TicketService {
      */
     public List<Seat> getAllSeat(int showId,int stadiumId);
 
+    public List<Seat> getSeats(int showId,int stadiumId,int row);
     /**
      * 获得不选座购买的用户的座位信息
      * @param showId

@@ -24,6 +24,10 @@ public class TicketServiceImpl implements TicketService {
         return DaoFactory.getTicketDao().getAllSeat(showId, stadiumId);
     }
 
+    public List<Seat> getSeats(int showId, int stadiumId, int row) {
+        return DaoFactory.getTicketDao().getSeats(showId,stadiumId,row);
+    }
+
     public List<Seat> getUnoccupiedSeat(int showId, int stadiumId, int number) {
        List<Seat> seatList= DaoFactory.getTicketDao().getUnoccupiedSeat(showId,stadiumId,number);
        if(seatList!=null){

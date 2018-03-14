@@ -52,9 +52,11 @@ public class MainTest {
 //        seatList.add(seat);
 ////        System.out.println(ticketService.selectSeat(seatList,mid));
 //System.out.println(ticketService.refuned(1));
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
-
+//        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+//        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+TicketService ticketService=ServiceFactory.getTicketService();
+List<Seat> seatList=ticketService.getSeats(1,1,2);
+System.out.println(seatList.size());
 
     }
 

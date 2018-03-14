@@ -14,6 +14,14 @@ public interface TicketDao {
      * @return
      */
     public List<Seat> getAllSeat(int showId, int stadiumId);
+public List<Seat> getSeats(int showId, int stadiumId,int row);
+    /**
+     * 获得未售的所有座位
+     * @param showId
+     * @param stadiumId
+     * @param number
+     * @return
+     */
     public List<Seat> getUnoccupiedSeat(int showId,int stadiumId,int number);
 
     /**
