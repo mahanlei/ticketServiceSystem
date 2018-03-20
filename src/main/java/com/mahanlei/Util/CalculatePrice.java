@@ -1,5 +1,7 @@
 package com.mahanlei.Util;
 
+import java.text.DecimalFormat;
+
 public class CalculatePrice {
 
     public static  double caculatePrice(double price,int discountType,int rank) {
@@ -36,6 +38,7 @@ public class CalculatePrice {
                 discount = discountType * 0.7;
                 break;
         }
-        return price * discount;
+        DecimalFormat df = new DecimalFormat( "0.00");
+        return Double.valueOf(df.format( price * discount));
     }
 }

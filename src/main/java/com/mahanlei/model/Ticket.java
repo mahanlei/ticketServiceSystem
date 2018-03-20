@@ -12,6 +12,18 @@ public class Ticket {
     private int seatColumn;
     private int state;
 
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date creatTime) {
+        this.createdTime = creatTime;
+    }
+
+    private Date createdTime;
+    private Date refunedTime;
+    private double payPrice;
+
     public Date getRefunedTime() {
         return refunedTime;
     }
@@ -28,19 +40,19 @@ public class Ticket {
         this.payPrice = payPrice;
     }
 
-    private Date refunedTime;
-    private double payPrice;
 
-    public Ticket(String mid, int showId, int stadiumId, int seatRow, int seatColumn) {
+
+    public Ticket(String mid, int showId, int stadiumId, int seatRow, int seatColumn,Date createdTime,double payPrice) {
         this.tid=0;
         this.mid = mid;
         this.showId = showId;
         this.stadiumId = stadiumId;
         this.seatRow = seatRow;
         this.seatColumn = seatColumn;
-        this.state = 0;
+        this.createdTime=createdTime;
         this.refunedTime=null;
-        this.payPrice=0.0;
+        this.payPrice=payPrice;
+        this.state = 0;
     }
 
     public Ticket(){
@@ -103,7 +115,7 @@ public class Ticket {
         this.state = state;
     }
 
-    public Ticket(int tid, String mid, int showId, int stadiumId, int seatRow, int seatColumn, int state) {
+    public Ticket(int tid, String mid, int showId, int stadiumId, int seatRow, int seatColumn, int state,Date createdTime,Date refunedTime) {
 
         this.tid = tid;
         this.mid = mid;
@@ -112,5 +124,7 @@ public class Ticket {
         this.seatRow = seatRow;
         this.seatColumn = seatColumn;
         this.state = state;
+        this.createdTime=createdTime;
+        this.refunedTime=refunedTime;
     }
 }

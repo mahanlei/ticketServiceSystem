@@ -1,8 +1,8 @@
 package com.mahanlei.controller;
 
+import com.mahanlei.factory.DaoFactory;
 import com.mahanlei.factory.ServiceFactory;
-import com.mahanlei.model.DiscountCoupon;
-import com.mahanlei.model.Seat;
+import com.mahanlei.model.*;
 import com.mahanlei.service.MemberService;
 import com.mahanlei.service.TicketService;
 
@@ -55,9 +55,24 @@ public class MainTest {
 //        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 //        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
 TicketService ticketService=ServiceFactory.getTicketService();
-List<Seat> seatList=ticketService.getSeats(1,1,2);
-System.out.println(seatList.size());
-
+List<TicketInfoBrief> seatList=ticketService.getMyTicketInfo("ma123",2);
+////System.out.println(seatList.size());
+//System.out.println(DaoFactory.getTicketDao().getTicketInfo(DaoFactory.getTicketDao().getMyTicketsId("ma123",1).get(0)).getCreatedTime());
+//        List<Integer> tidList=DaoFactory.getTicketDao().getMyTicketsId(mid,1);
+//        System.out.println(tidList.size());
+//        List<TicketInfoBrief> ticketInfoBriefList=new ArrayList<TicketInfoBrief>();
+//        if(tidList.size()!=0){
+//            for(int i=0;i<tidList.size();i++){
+//                Ticket ticket=DaoFactory.getTicketDao().getTicketInfo(tidList.get(i));
+//                int showId=ticket.getShowId();
+//                ShowInfo showInfo=DaoFactory.getShowDao().getShowInfo(showId);
+//                TicketInfoBrief ticketInfoBrief=new TicketInfoBrief(showInfo.getName(),showInfo.getStaName(),
+//                        showInfo.getPicture(),ticket.getSeatRow(),ticket.getSeatColumn(),
+//                        ticket.getCreatedTime(),ticket.getRefunedTime(),ticket.getPayPrice());
+//                System.out.println(ticketInfoBrief.getCreatedTime());
+//                ticketInfoBriefList.add(ticketInfoBrief);
+//            }
+//        }
     }
 
 }

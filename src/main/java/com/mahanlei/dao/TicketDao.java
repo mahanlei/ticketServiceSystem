@@ -4,6 +4,7 @@ import com.mahanlei.Util.Message;
 import com.mahanlei.model.Seat;
 import com.mahanlei.model.Ticket;
 
+import java.util.Date;
 import java.util.List;
 
 public interface TicketDao {
@@ -47,7 +48,7 @@ public List<Seat> getSeats(int showId, int stadiumId,int row);
      */
 //    public Message updateSeatState(Seat seat);
     /**
-     * 更新票的状态 0，1，2，3
+     * 更新票的状态 0，1，2，3,4
      * @param tid
      * @return
      */
@@ -60,6 +61,14 @@ public List<Seat> getSeats(int showId, int stadiumId,int row);
      * @return
      */
     public Message updateTicketPayPrice(int tid,double price);
+
+    /**
+     * 更新票单的退订时间
+     * @param tid
+     * @param refunedTime
+     * @return
+     */
+    public Message updateTicketRefunedTime(int tid,Date refunedTime);
     /**
      * 更新用户的账户余额，消费总额，会员
      * @param mid
@@ -95,5 +104,22 @@ public List<Seat> getSeats(int showId, int stadiumId,int row);
      * @return
      */
     public Message addTicket(List<Ticket> tickets);
+
+    /**
+     * 获得某用户对于某个演出下的所有票单
+     * @param mid
+     * @param showId
+     * @param stadiumId
+     * @return
+     */
+    public List<Integer> getTid(String mid,int showId,int stadiumId,int state);
+    /**
+     * 获取某用户的某种类型票务信息
+     * @param mid
+     * @param state
+     * @return
+     */
+    public List<Integer> getMyTicketsId(String mid,int state);
+
 
 }

@@ -4,7 +4,6 @@ import com.mahanlei.Util.Message;
 import com.mahanlei.factory.ServiceFactory;
 import com.mahanlei.model.DiscountCoupon;
 import com.mahanlei.service.MemberService;
-import com.sun.org.apache.regexp.internal.RE;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 

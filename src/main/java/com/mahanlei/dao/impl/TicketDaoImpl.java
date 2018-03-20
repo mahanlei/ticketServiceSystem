@@ -6,11 +6,11 @@ import com.mahanlei.dao.TicketDao;
 import com.mahanlei.model.Seat;
 import com.mahanlei.model.Ticket;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TicketDaoImpl implements TicketDao {
@@ -226,12 +226,33 @@ if(seatList.size()>=number){
         }else return Message.UPDATE_FAILED;
     }
 
+    public Message updateTicketRefunedTime(int tid, Date refunedTime) {
+        Timestamp timeStamp = new Timestamp(refunedTime.getTime());
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        int n=0;
+        try {
+            statement=connection.prepareStatement("UPDATE ticket SET refunedTime=? WHERE tid=?");
+            statement.setTimestamp(1,timeStamp);
+            statement.setInt(2,tid);
+            n=statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+        if (n>0){
+            return Message.UPDATE_SUCCESS;
+        }else return Message.UPDATE_FAILED;
+    }
+
     public Message updateMemBill(String mid, double money) {
         Connection connection=daoHelper.getConnection();
         PreparedStatement statement=null;
         int n=0;
         try {
-            statement=connection.prepareStatement("UPDATE memberbill set balance=balance-?,consumption=consumption+? WHERE uid=?");
+            statement=connection.prepareStatement("UPDATE memberbill set balance=balance-?,consumption=consumption+? WHERE mid=?");
             statement.setDouble(1,money);
             statement.setDouble(2,money);
             statement.setString(3,mid);
@@ -297,6 +318,9 @@ if(seatList.size()>=number){
         int seatRow=0;
         int seatColumn=0;
         int state=0;
+        Date createdTime=null;
+        Date refunedTime=null;
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             statement=connection.prepareStatement("SELECT * FROM ticket WHERE tid=?");
             statement.setInt(1,tid);
@@ -308,6 +332,10 @@ if(seatList.size()>=number){
               seatRow=resultSet.getInt("seatRow");
               seatColumn=resultSet.getInt("seatColumn");
               state=resultSet.getInt("state");
+            createdTime=resultSet.getTimestamp("createdTime");
+//           createdTime=new Date(createdTimeStamp.getTime());
+           refunedTime=resultSet.getTimestamp("refunedTime");
+//            refunedTime=new Date(refunedTimeStamp.getTime());
           }
 
         } catch (SQLException e) {
@@ -317,7 +345,7 @@ if(seatList.size()>=number){
             daoHelper.closePreparedStatement(statement);
             daoHelper.closeConnection(connection);
         }
-        Ticket ticket=new Ticket(tid,mid,showId,stadiumId,seatRow,seatColumn,state);
+        Ticket ticket=new Ticket(tid,mid,showId,stadiumId,seatRow,seatColumn,state,createdTime,refunedTime);
 
         return ticket;
     }
@@ -332,13 +360,16 @@ if(seatList.size()>=number){
         }
         for(int i=0;i<tickets.size();i++) {
             try {
-                statement = connection.prepareStatement("INSERT INTO ticket (mid, showId, stadiumId, seatRow, seatColumn, state) VALUES (?,?,?,?,?,?)");
+                statement = connection.prepareStatement("INSERT INTO ticket (mid, showId, stadiumId, seatRow, seatColumn, state,createdTime ,payPrice) VALUES (?,?,?,?,?,?,?,?)");
                 statement.setString(1,tickets.get(i).getMid());
                 statement.setInt(2,tickets.get(i).getShowId());
                 statement.setInt(3,tickets.get(i).getStadiumId());
                 statement.setInt(4,tickets.get(i).getSeatRow());
                 statement.setInt(5,tickets.get(i).getSeatColumn());
                 statement.setInt(6,tickets.get(i).getState());
+                Timestamp timestamp=new Timestamp(tickets.get(i).getCreatedTime().getTime());
+                statement.setTimestamp(7,timestamp);
+                statement.setDouble(8,tickets.get(i).getPayPrice());
                 statement.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -362,6 +393,60 @@ if(seatList.size()>=number){
             daoHelper.closeConnection(connection);
         }
 return Message.SELECT_SUCCESS;
+    }
+
+    public List<Integer> getTid(String mid, int showId, int stadiumId,int state) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+       List<Integer> tidList=new ArrayList<Integer>();
+        try {
+            statement=connection.prepareStatement("SELECT tid FROM ticket WHERE mid=? AND showId=? AND  stadiumId=? AND state=?");
+            statement.setString(1,mid);
+            statement.setInt(2,showId);
+            statement.setInt(3,stadiumId);
+            statement.setInt(4,state);
+            resultSet =  statement.executeQuery();
+            while (resultSet.next()){
+               int  tid=resultSet.getInt("tid");
+               tidList.add(tid);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+
+        return tidList;
+    }
+
+    public List<Integer> getMyTicketsId(String mid, int state) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        List<Integer> tidList=new ArrayList<Integer>();
+        try {
+            statement=connection.prepareStatement("SELECT tid FROM ticket WHERE mid=? AND state=?");
+            statement.setString(1,mid);
+            statement.setInt(2,state);
+            resultSet =  statement.executeQuery();
+            while (resultSet.next()){
+                int  tid=resultSet.getInt("tid");
+                tidList.add(tid);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+
+        return tidList;
     }
 
 }

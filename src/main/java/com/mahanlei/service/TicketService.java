@@ -2,6 +2,8 @@ package com.mahanlei.service;
 
 import com.mahanlei.Util.Message;
 import com.mahanlei.model.Seat;
+import com.mahanlei.model.Ticket;
+import com.mahanlei.model.TicketInfoBrief;
 
 import java.util.List;
 
@@ -14,6 +16,13 @@ public interface TicketService {
      */
     public List<Seat> getAllSeat(int showId,int stadiumId);
 
+    /**
+     * 获得每一行中座位的状态
+     * @param showId
+     * @param stadiumId
+     * @param row
+     * @return
+     */
     public List<Seat> getSeats(int showId,int stadiumId,int row);
     /**
      * 获得不选座购买的用户的座位信息
@@ -24,7 +33,7 @@ public interface TicketService {
      */
     public List<Seat> getUnoccupiedSeat(int showId,int stadiumId,int number);
     /**
-     * 用户在选择座位，最多6个，获得价格信息
+     * 用户在选择座位，获得每个座位价格信息
      * @return price座位价格
      */
     public Double selectSeat(Seat seat);
@@ -37,11 +46,17 @@ public interface TicketService {
     public Message confirmTickets(List<Seat> seatList,String mid);
     /**
      * 用户完成支付（票状态转为预定成功未消费）
-     * @param tid
-     * @return 用户实际支付的价钱
+     * @param totalPayPrice
+     * @return 支付是否成功
      */
-    public double doPay(int tid,int discountType);
+    public Message doPay(List<Integer> ticketList,double totalPayPrice);
 
+    /**
+     * 用户未在15分钟内完成支付，关闭交易，恢复座位状态
+     * @param ticketList
+     * @return
+     */
+    public Message closeDeal(List<Integer> ticketList);
     /**
      * 用户退票（票状态转为退订状态）
      * @param tid
@@ -50,11 +65,11 @@ public interface TicketService {
     public Message refuned(int tid);
 
     /**
-     * 获得某张票单的状态，是否是已支付状态
+     * 获得某张票单的信息
      * @param tid
      * @return
      */
-    public int getTicketState(int tid);
+    public Ticket getTicketInfo(int tid);
 
     /**
      * 检票（票状态转为已消费）
@@ -63,6 +78,27 @@ public interface TicketService {
      */
     public Message checkTicket(int tid);
 
+    /**
+     * 获得某用户某场演出的全部票单
+     * @param mid
+     * @param showId
+     * @param stadiumId
+     * @return
+     */
+    public List<Integer> getTid(String mid,int showId,int stadiumId,int state);
 
-
+    /**
+     * 获取某用户的某种类型票务信息
+     * @param mid
+     * @param state
+     * @return
+     */
+    public List<TicketInfoBrief> getMyTicketInfo(String mid, int state);
+    /**
+     * 选择了优惠券后获得实际支付价格
+     * @param tid
+     * @param discoutType
+     * @return
+     */
+    public double getDisPrice(int tid,int discoutType);
 }
