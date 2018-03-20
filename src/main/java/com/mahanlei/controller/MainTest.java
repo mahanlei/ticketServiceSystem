@@ -55,7 +55,10 @@ public class MainTest {
 //        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 //        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
 TicketService ticketService=ServiceFactory.getTicketService();
-List<TicketInfoBrief> seatList=ticketService.getMyTicketInfo("ma123",2);
+//List<TicketInfoBrief> seatList=ticketService.getMyTicketInfo("ma123",2);
+
+        List<Seat> seatList=ticketService.getUnoccupiedSeat(1,1,7);
+        System.out.println(seatList==null);
 ////System.out.println(seatList.size());
 //System.out.println(DaoFactory.getTicketDao().getTicketInfo(DaoFactory.getTicketDao().getMyTicketsId("ma123",1).get(0)).getCreatedTime());
 //        List<Integer> tidList=DaoFactory.getTicketDao().getMyTicketsId(mid,1);

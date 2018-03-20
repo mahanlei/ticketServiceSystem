@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -24,11 +23,9 @@ public class BuyTicketController {
     @RequestMapping(value = "/confirmSeats", method = RequestMethod.POST)
     public JSONObject confirmSeats(@RequestParam("seats") String seats) {
         JSONObject jsonObject = new JSONObject();
-//        System.out.println(seats);
         JSONArray seatList = JSONArray.fromObject(seats);
 
         String mid = seatList.getJSONObject(0).getString("mid");
-//        System.out.println(mid);
         List<Seat> seatList1 = new ArrayList<Seat>();
         for (int i = 0; i < seatList.size(); i++) {
             JSONObject seat = seatList.getJSONObject(i);
@@ -48,7 +45,33 @@ public class BuyTicketController {
         }
         return jsonObject;
     }
-
+@RequestMapping(value = "/getUnoccupiedSeats",method = RequestMethod.POST)
+    public JSONObject getUnoccupiedSeats(@RequestParam("mid") String mid,
+                                         @RequestParam("showId") int showId,
+                                        @RequestParam("stadiumId") int stadiumId,
+                                        @RequestParam("number") int number){
+        JSONObject jsonObject=new JSONObject();
+    Message message =null;
+            List<Seat> seatList=  ticketService.getUnoccupiedSeat(showId,stadiumId,number);
+      if(seatList!=null){
+          for(int i=0;i<seatList.size();i++){
+              seatList.get(i).setState(1);
+          }
+          message = ticketService.confirmTickets(seatList, mid);
+          if(message.equals(Message.SELECT_SUCCESS)){
+              jsonObject.put("code","200");
+              jsonObject.put("msg","配票成功");
+          }else {
+              jsonObject.put("code","500");
+              jsonObject.put("msg","配票失败,请再次尝试");
+          }
+      }
+      else {
+          jsonObject.put("code","500");
+          jsonObject.put("msg","配票失败，余票不足");
+      }
+      return jsonObject;
+}
     @RequestMapping(value = "/getPayPrice", method = RequestMethod.POST)
     public JSONObject getPayPrice(@RequestParam("mid") String mid,
                                   @RequestParam("showId") int showId,

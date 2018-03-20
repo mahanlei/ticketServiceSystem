@@ -113,7 +113,7 @@ public class TicketDaoImpl implements TicketDao {
             daoHelper.closeConnection(connection);
         }
 if(seatList.size()>=number){
-            return  seatList.subList(0,number-1);
+            return  seatList.subList(0,number);
 }else return null;
     }
 
@@ -183,6 +183,28 @@ if(seatList.size()>=number){
         }
         return Message.UPDATE_SUCCESS;
 
+    }
+
+    public Message updateSeatState(Seat seat) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        int n=0;
+        try {
+            statement = connection.prepareStatement("UPDATE seatinfo SET state=? WHERE showId=? " +
+                    "AND stadiumId=? AND seatRow=? AND seatColumn=?");
+            statement.setInt(1,seat.getState() );
+            statement.setInt(2,seat.getShowId());
+            statement.setInt(3,seat.getStadiumId());
+            statement.setInt(4,seat.getSeatRow());
+            statement.setInt(5,seat.getSeatColumn());
+          n=  statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if(n!=0){
+            return Message.UPDATE_SUCCESS;
+        }
+        else return Message.UPDATE_FAILED;
     }
 
     public Message updateTicketState(int tid, int state) {
@@ -320,6 +342,7 @@ if(seatList.size()>=number){
         int state=0;
         Date createdTime=null;
         Date refunedTime=null;
+        double payPrice=0.0;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             statement=connection.prepareStatement("SELECT * FROM ticket WHERE tid=?");
@@ -336,6 +359,7 @@ if(seatList.size()>=number){
 //           createdTime=new Date(createdTimeStamp.getTime());
            refunedTime=resultSet.getTimestamp("refunedTime");
 //            refunedTime=new Date(refunedTimeStamp.getTime());
+              payPrice=resultSet.getDouble("payPrice");
           }
 
         } catch (SQLException e) {
@@ -345,7 +369,7 @@ if(seatList.size()>=number){
             daoHelper.closePreparedStatement(statement);
             daoHelper.closeConnection(connection);
         }
-        Ticket ticket=new Ticket(tid,mid,showId,stadiumId,seatRow,seatColumn,state,createdTime,refunedTime);
+        Ticket ticket=new Ticket(tid,mid,showId,stadiumId,seatRow,seatColumn,state,createdTime,refunedTime,payPrice);
 
         return ticket;
     }

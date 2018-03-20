@@ -46,7 +46,7 @@ public List<Seat> getSeats(int showId, int stadiumId,int row);
      * @param seat
      * @return
      */
-//    public Message updateSeatState(Seat seat);
+    public Message updateSeatState(Seat seat);
     /**
      * 更新票的状态 0，1，2，3,4
      * @param tid

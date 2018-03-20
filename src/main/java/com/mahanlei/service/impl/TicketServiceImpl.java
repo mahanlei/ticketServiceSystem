@@ -111,7 +111,7 @@ public class TicketServiceImpl implements TicketService {
       int showId=ticket.getShowId();
       String mid=ticket.getMid();
       Date showTime=DaoFactory.getShowDao().getShowInfo(showId).getStartTime();
-      int hours= (int) (showTime.getTime()-currentTime.getTime()/1000/60/60);
+      int hours= (int) ((showTime.getTime()-currentTime.getTime())/1000/60/60);
       double payPrice=DaoFactory.getTicketDao().getTicketInfo(tid).getPayPrice();
       double refunedMoney=0.0;
       if(hours>7*24){
@@ -123,9 +123,16 @@ public class TicketServiceImpl implements TicketService {
       }else if(hours<=24&&hours>2){
           refunedMoney=payPrice*0.5;
       } else refunedMoney=0.0;
+        System.out.println("退款时间差"+hours);
+      System.out.println("退款"+refunedMoney);
       Message updateMemberBill=DaoFactory.getTicketDao().updateMemBill(mid,-refunedMoney);
       Message updateTicketState=DaoFactory.getTicketDao().updateTicketState(tid,3);
-        if(updateMemberBill.equals(Message.UPDATE_SUCCESS)&&updateTicketState.equals(Message.UPDATE_SUCCESS)){
+      Message updateTicketRefundedTime=DaoFactory.getTicketDao().updateTicketRefunedTime(tid,currentTime);
+      Message updateSeatState=DaoFactory.getTicketDao().updateSeatState(new Seat(showId,ticket.getStadiumId(),ticket.getSeatRow(),ticket.getSeatColumn(),0));
+        if(updateMemberBill.equals(Message.UPDATE_SUCCESS)
+                &&updateTicketRefundedTime.equals(Message.UPDATE_SUCCESS)
+                &&updateSeatState.equals(Message.UPDATE_SUCCESS)
+                &&updateTicketState.equals(Message.UPDATE_SUCCESS)){
             return Message.REFUNED_SUCCESS;
         }else return Message.REFUNED_FAILED;
 
@@ -160,14 +167,14 @@ public class TicketServiceImpl implements TicketService {
     public List<TicketInfoBrief> getMyTicketInfo(String mid, int state) {
 
       List<Integer> tidList=DaoFactory.getTicketDao().getMyTicketsId(mid,state);
-      System.out.println(tidList.size());
+//      System.out.println(tidList.size());
       List<TicketInfoBrief> ticketInfoBriefList=new ArrayList<TicketInfoBrief>();
       if(tidList.size()!=0){
           for(int i=0;i<tidList.size();i++){
               Ticket ticket=DaoFactory.getTicketDao().getTicketInfo(tidList.get(i));
               int showId=ticket.getShowId();
               ShowInfo showInfo=DaoFactory.getShowDao().getShowInfo(showId);
-              TicketInfoBrief ticketInfoBrief=new TicketInfoBrief(showInfo.getName(),showInfo.getStaName(),
+              TicketInfoBrief ticketInfoBrief=new TicketInfoBrief(ticket.getTid(),showInfo.getName(),showInfo.getStaName(),
                       showInfo.getPicture(),ticket.getSeatRow(),ticket.getSeatColumn(),
                       ticket.getCreatedTime(),ticket.getRefunedTime(),ticket.getPayPrice());
 //              System.out.println(ticketInfoBrief.getCreatedTime());
@@ -184,11 +191,14 @@ public class TicketServiceImpl implements TicketService {
                 ticket.getSeatRow(), ticket.getSeatColumn());
 
         int memRank=  ServiceFactory.getMemberService().getMemberInfo(ticket.getMid()).getRank();
-        double disPrice= CalculatePrice.caculatePrice(price,discoutType,memRank);
-        Message updatePriceMessage= DaoFactory.getTicketDao().updateTicketPayPrice(tid,disPrice);
-        if(updatePriceMessage.equals(Message.UPDATE_SUCCESS)){
-            return disPrice;
-        }else return 0;
-
+        if(discoutType==0){
+            return price;
+        }else {
+            double disPrice = CalculatePrice.caculatePrice(price, discoutType, memRank);
+            Message updatePriceMessage = DaoFactory.getTicketDao().updateTicketPayPrice(tid, disPrice);
+            if (updatePriceMessage.equals(Message.UPDATE_SUCCESS)) {
+                return disPrice;
+            } else return 0;
+        }
     }
 }

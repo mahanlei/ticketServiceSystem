@@ -3,6 +3,7 @@ package com.mahanlei.model;
 import java.util.Date;
 
 public class TicketInfoBrief {
+    private int tid;
     private String  showName;
     private String  staName;
     private String picture;
@@ -26,7 +27,8 @@ public class TicketInfoBrief {
         this.payPrice = payPrice;
     }
 
-    public TicketInfoBrief(String showName, String staName, String picture,int seatRow, int seatColumn, Date createdTime, Date refunedTime, double payPrice) {
+    public TicketInfoBrief(int tid,String showName, String staName, String picture,int seatRow, int seatColumn, Date createdTime, Date refunedTime, double payPrice) {
+        this.tid=tid;
         this.showName = showName;
         this.staName = staName;
         this.picture=picture;
@@ -35,6 +37,14 @@ public class TicketInfoBrief {
         this.createdTime = createdTime;
         this.refunedTime = refunedTime;
         this.payPrice = payPrice;
+    }
+
+    public int getTid() {
+        return tid;
+    }
+
+    public void setTid(int tid) {
+        this.tid = tid;
     }
 
     public String getPicture() {

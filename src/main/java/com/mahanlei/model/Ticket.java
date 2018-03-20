@@ -11,6 +11,9 @@ public class Ticket {
     private int seatRow;
     private int seatColumn;
     private int state;
+    private Date createdTime;
+    private Date refunedTime;
+    private double payPrice;
 
     public Date getCreatedTime() {
         return createdTime;
@@ -20,9 +23,6 @@ public class Ticket {
         this.createdTime = creatTime;
     }
 
-    private Date createdTime;
-    private Date refunedTime;
-    private double payPrice;
 
     public Date getRefunedTime() {
         return refunedTime;
@@ -41,21 +41,20 @@ public class Ticket {
     }
 
 
-
-    public Ticket(String mid, int showId, int stadiumId, int seatRow, int seatColumn,Date createdTime,double payPrice) {
-        this.tid=0;
+    public Ticket(String mid, int showId, int stadiumId, int seatRow, int seatColumn, Date createdTime, double payPrice) {
+        this.tid = 0;
         this.mid = mid;
         this.showId = showId;
         this.stadiumId = stadiumId;
         this.seatRow = seatRow;
         this.seatColumn = seatColumn;
-        this.createdTime=createdTime;
-        this.refunedTime=null;
-        this.payPrice=payPrice;
+        this.createdTime = createdTime;
+        this.refunedTime = null;
+        this.payPrice = payPrice;
         this.state = 0;
     }
 
-    public Ticket(){
+    public Ticket() {
 
     }
 
@@ -115,7 +114,7 @@ public class Ticket {
         this.state = state;
     }
 
-    public Ticket(int tid, String mid, int showId, int stadiumId, int seatRow, int seatColumn, int state,Date createdTime,Date refunedTime) {
+    public Ticket(int tid, String mid, int showId, int stadiumId, int seatRow, int seatColumn, int state, Date createdTime, Date refunedTime,double payPrice) {
 
         this.tid = tid;
         this.mid = mid;
@@ -124,7 +123,8 @@ public class Ticket {
         this.seatRow = seatRow;
         this.seatColumn = seatColumn;
         this.state = state;
-        this.createdTime=createdTime;
-        this.refunedTime=refunedTime;
+        this.createdTime = createdTime;
+        this.refunedTime = refunedTime;
+        this.payPrice=payPrice;
     }
 }

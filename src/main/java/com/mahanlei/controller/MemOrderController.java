@@ -1,5 +1,6 @@
 package com.mahanlei.controller;
 
+import com.mahanlei.Util.Message;
 import com.mahanlei.factory.ServiceFactory;
 import com.mahanlei.model.TicketInfoBrief;
 import com.mahanlei.service.TicketService;
@@ -25,6 +26,7 @@ public class MemOrderController {
         if (ticketInfoBriefList.size() != 0) {
             for (int i = 0; i < ticketInfoBriefList.size(); i++) {
                 JSONObject jsonObject = new JSONObject();
+                jsonObject.put("tid",ticketInfoBriefList.get(i).getTid());
                 jsonObject.put("showName", ticketInfoBriefList.get(i).getShowName());
                 jsonObject.put("staName", ticketInfoBriefList.get(i).getStaName());
                 jsonObject.put("picture", ticketInfoBriefList.get(i).getPicture());
@@ -42,12 +44,26 @@ public class MemOrderController {
                 }
 
                 jsonObject.put("payPrice", ticketInfoBriefList.get(i).getPayPrice());
-
+System.out.println(ticketInfoBriefList.get(i).getPayPrice());
                 jsonArray.add(jsonObject);
 
             }
         }
         return jsonArray;
+    }
+    @RequestMapping(value = "/doRefund" ,method = RequestMethod.POST)
+    public JSONObject doRefund(@RequestParam  ("tid") int tid){
+        JSONObject jsonObject=new JSONObject();
+       Message message= ticketService.refuned(tid);
+       if(message.equals(Message.REFUNED_SUCCESS)){
+           jsonObject.put("code","200");
+           jsonObject.put("msg","退订成功");
+
+       }else{
+           jsonObject.put("code","500");
+           jsonObject.put("msg","退订失败，请再次尝试");
+       }
+       return jsonObject;
     }
 
 }
