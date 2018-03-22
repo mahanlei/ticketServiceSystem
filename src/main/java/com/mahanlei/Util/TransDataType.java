@@ -83,4 +83,8 @@ public class TransDataType {
         String dateStr = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date);
       return dateStr;
     }
+    public static String intToString(int staId){
+        String str = String.format("%07d", staId);
+        return str;
+    }
 }

@@ -1,13 +1,7 @@
 package com.mahanlei.factory;
 
-import com.mahanlei.dao.MemberDao;
-import com.mahanlei.dao.ShowDao;
-import com.mahanlei.dao.TicketDao;
-import com.mahanlei.dao.UserDao;
-import com.mahanlei.dao.impl.MemberDaoImpl;
-import com.mahanlei.dao.impl.ShowDaoImpl;
-import com.mahanlei.dao.impl.TicketDaoImpl;
-import com.mahanlei.dao.impl.UserDaoImpl;
+import com.mahanlei.dao.*;
+import com.mahanlei.dao.impl.*;
 
 public class DaoFactory {
 public static  UserDao getUserDao(){
@@ -19,5 +13,8 @@ public static ShowDao getShowDao(){
 }
 public static TicketDao getTicketDao(){
    return TicketDaoImpl.getTicketDao();
+}
+public static StadiumDao getStadiumDao(){
+    return StadiumDaoImpl.getStadiumDao();
 }
 }

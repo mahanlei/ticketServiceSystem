@@ -26,4 +26,6 @@ public interface ShowDao {
      * @return
      */
     public Message addAShow(ShowInfo showInfo);
+    public List<ShowInfo> getStaShow(int stadiumId);
+
 }

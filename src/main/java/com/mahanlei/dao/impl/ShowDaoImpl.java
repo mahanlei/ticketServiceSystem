@@ -143,4 +143,36 @@ public class ShowDaoImpl implements ShowDao {
         }
 
     }
+
+    public List<ShowInfo> getStaShow(int stadiumId) {
+        List<ShowInfo> list=new ArrayList<ShowInfo>();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        Connection connection=daoHelper.getConnection();
+        try {
+            statement=connection.prepareStatement("SELECT showId,name,startTime,endTime,type,picture,description,showState FROM showInfo WHERE stadiumId=?");
+            statement.setInt(1,stadiumId);
+            resultSet= statement.executeQuery();
+            while (resultSet.next()){
+                int showID=resultSet.getInt("showId");
+                String name=resultSet.getString("name");
+                Date startTime=resultSet.getTimestamp("startTime");
+                Date endTime=resultSet.getTimestamp("endTime");
+                int type=resultSet.getInt("type");
+                ShowType showType= TransDataType.intToShowType(type);
+                String picture=resultSet.getString("picture");
+                String description=resultSet.getString("description");
+                int showState=resultSet.getInt("showState");
+                ShowInfo showInfo=new ShowInfo(showID,name,startTime,endTime,showType,picture,description,showState);
+                list.add(showInfo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+        return list;
+    }
 }

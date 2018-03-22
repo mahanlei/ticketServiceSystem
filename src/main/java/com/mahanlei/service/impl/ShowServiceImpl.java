@@ -22,6 +22,10 @@ public class ShowServiceImpl implements ShowService{
        return DaoFactory.getShowDao().getShowInfo(showId);
     }
 
+    public List<ShowInfo> getStaShow(String staId) {
+        return DaoFactory.getShowDao().getStaShow(Integer.parseInt(staId));
+    }
+
     public Message releaseAShow(ShowInfo showInfo) {
        return DaoFactory.getShowDao().addAShow(showInfo);
     }

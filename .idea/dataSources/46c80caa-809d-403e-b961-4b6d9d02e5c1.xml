@@ -21,207 +21,206 @@
     <table id="15" parent="2" name="profilt"/>
     <table id="16" parent="2" name="seatinfo"/>
     <table id="17" parent="2" name="showInfo"/>
-    <table id="18" parent="2" name="stadiumfinance"/>
-    <table id="19" parent="2" name="stadiuminfo"/>
-    <table id="20" parent="2" name="ticket"/>
-    <table id="21" parent="2" name="userp"/>
-    <column id="22" parent="11" name="aid">
+    <table id="18" parent="2" name="stadiuminfo"/>
+    <table id="19" parent="2" name="ticket"/>
+    <table id="20" parent="2" name="userp"/>
+    <column id="21" parent="11" name="aid">
       <Position>1</Position>
       <DataType>int(11) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="23" parent="11" name="stadiumId">
+    <column id="22" parent="11" name="stadiumId">
       <Position>2</Position>
       <DataType>int(7)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="11" name="state">
+    <column id="23" parent="11" name="state">
       <Position>3</Position>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="25" parent="11" name="type">
+    <column id="24" parent="11" name="type">
       <Position>4</Position>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="26" parent="11" name="staName">
+    <column id="25" parent="11" name="staName">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="27" parent="11" name="address">
+    <column id="26" parent="11" name="address">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="28" parent="11" name="seatRows">
+    <column id="27" parent="11" name="seatRows">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="11" name="seatColumns">
+    <column id="28" parent="11" name="seatColumns">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="30" parent="11" name="PRIMARY">
+    <key id="29" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>aid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="31" parent="12" name="mid">
+    <column id="30" parent="12" name="mid">
       <Position>1</Position>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="32" parent="12" name="count1">
+    <column id="31" parent="12" name="count1">
       <Position>2</Position>
       <DataType>int(5)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="33" parent="12" name="count2">
+    <column id="32" parent="12" name="count2">
       <Position>3</Position>
       <DataType>int(5)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="34" parent="12" name="count3">
+    <column id="33" parent="12" name="count3">
       <Position>4</Position>
       <DataType>int(5)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="35" parent="12" name="count4">
+    <column id="34" parent="12" name="count4">
       <Position>5</Position>
       <DataType>int(5)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="36" parent="12" name="PRIMARY">
+    <key id="35" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>mid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="37" parent="13" name="mid">
+    <column id="36" parent="13" name="mid">
       <Position>1</Position>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="38" parent="13" name="balance">
+    <column id="37" parent="13" name="balance">
       <Position>2</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="39" parent="13" name="consumption">
+    <column id="38" parent="13" name="consumption">
       <Position>3</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="40" parent="13" name="PRIMARY">
+    <key id="39" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>mid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="41" parent="14" name="mid">
+    <column id="40" parent="14" name="mid">
       <Position>1</Position>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="42" parent="14" name="age">
+    <column id="41" parent="14" name="age">
       <Position>2</Position>
       <DataType>int(3)|0</DataType>
     </column>
-    <column id="43" parent="14" name="email">
+    <column id="42" parent="14" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="44" parent="14" name="rank">
+    <column id="43" parent="14" name="rank">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="45" parent="14" name="points">
+    <column id="44" parent="14" name="points">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="46" parent="14" name="state">
+    <column id="45" parent="14" name="state">
       <Position>6</Position>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="47" parent="14" name="code">
+    <column id="46" parent="14" name="code">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <key id="48" parent="14" name="PRIMARY">
+    <key id="47" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>mid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="49" parent="15" name="uid">
+    <column id="48" parent="15" name="uid">
       <Position>1</Position>
       <DataType>varchar(7)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="50" parent="15" name="profilt">
+    <column id="49" parent="15" name="profilt">
       <Position>2</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="51" parent="15" name="PRIMARY">
+    <key id="50" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="52" parent="16" name="showId">
+    <column id="51" parent="16" name="showId">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="53" parent="16" name="stadiumId">
+    <column id="52" parent="16" name="stadiumId">
       <Position>2</Position>
       <DataType>int(7)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="54" parent="16" name="seatRow">
+    <column id="53" parent="16" name="seatRow">
       <Position>3</Position>
       <DataType>int(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="55" parent="16" name="seatColumn">
+    <column id="54" parent="16" name="seatColumn">
       <Position>4</Position>
       <DataType>int(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="56" parent="16" name="price">
+    <column id="55" parent="16" name="price">
       <Position>5</Position>
       <DataType>double|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="57" parent="16" name="state">
+    <column id="56" parent="16" name="state">
       <Position>6</Position>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="58" parent="16" name="PRIMARY">
+    <key id="57" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>showId
 stadiumId
@@ -229,165 +228,150 @@ seatRow
 seatColumn</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="59" parent="17" name="showId">
+    <column id="58" parent="17" name="showId">
       <Position>1</Position>
       <DataType>int(11) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="60" parent="17" name="name">
+    <column id="59" parent="17" name="name">
       <Position>2</Position>
       <DataType>varchar(11)|0</DataType>
     </column>
-    <column id="61" parent="17" name="stadiumId">
+    <column id="60" parent="17" name="stadiumId">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="62" parent="17" name="startTime">
+    <column id="61" parent="17" name="startTime">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="63" parent="17" name="endTime">
+    <column id="62" parent="17" name="endTime">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="64" parent="17" name="type">
+    <column id="63" parent="17" name="type">
       <Position>6</Position>
       <DataType>int(1)|0</DataType>
     </column>
-    <column id="65" parent="17" name="picture">
+    <column id="64" parent="17" name="picture">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="66" parent="17" name="description">
+    <column id="65" parent="17" name="description">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="67" parent="17" name="showState">
+    <column id="66" parent="17" name="showState">
       <Position>9</Position>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="68" parent="17" name="PRIMARY">
+    <key id="67" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>showId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="69" parent="18" name="stadiumId">
+    <column id="68" parent="18" name="stadiumid">
       <Position>1</Position>
       <DataType>int(7) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="70" parent="18" name="income">
-      <Position>2</Position>
-      <DataType>double|0</DataType>
-    </column>
-    <key id="71" parent="18" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>stadiumId</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="72" parent="19" name="stadiumid">
-      <Position>1</Position>
-      <DataType>int(7) unsigned|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="73" parent="19" name="staName">
+    <column id="69" parent="18" name="staName">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="74" parent="19" name="address">
+    <column id="70" parent="18" name="address">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="75" parent="19" name="seatRows">
+    <column id="71" parent="18" name="seatRows">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="76" parent="19" name="seatColumns">
+    <column id="72" parent="18" name="seatColumns">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="77" parent="19" name="state">
+    <column id="73" parent="18" name="state">
       <Position>6</Position>
       <DataType>int(1)|0</DataType>
     </column>
-    <key id="78" parent="19" name="PRIMARY">
+    <key id="74" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>stadiumid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="79" parent="20" name="tid">
+    <column id="75" parent="19" name="tid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="80" parent="20" name="mid">
+    <column id="76" parent="19" name="mid">
       <Position>2</Position>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="81" parent="20" name="showId">
+    <column id="77" parent="19" name="showId">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="82" parent="20" name="stadiumId">
+    <column id="78" parent="19" name="stadiumId">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="83" parent="20" name="seatRow">
+    <column id="79" parent="19" name="seatRow">
       <Position>5</Position>
       <DataType>int(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="84" parent="20" name="seatColumn">
+    <column id="80" parent="19" name="seatColumn">
       <Position>6</Position>
       <DataType>int(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="85" parent="20" name="state">
+    <column id="81" parent="19" name="state">
       <Position>7</Position>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="86" parent="20" name="createdTime">
+    <column id="82" parent="19" name="createdTime">
       <Position>8</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="87" parent="20" name="refunedTime">
+    <column id="83" parent="19" name="refunedTime">
       <Position>9</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="88" parent="20" name="payPrice">
+    <column id="84" parent="19" name="payPrice">
       <Position>10</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="89" parent="20" name="PRIMARY">
+    <key id="85" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>tid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="90" parent="21" name="uid">
+    <column id="86" parent="20" name="uid">
       <Position>1</Position>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="91" parent="21" name="password">
+    <column id="87" parent="20" name="password">
       <Position>2</Position>
       <DataType>varchar(11)|0</DataType>
     </column>
-    <key id="92" parent="21" name="PRIMARY">
+    <key id="88" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid</ColNames>
       <Primary>1</Primary>

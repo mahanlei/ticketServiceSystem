@@ -1,13 +1,7 @@
 package com.mahanlei.factory;
 
-import com.mahanlei.service.MemberService;
-import com.mahanlei.service.ShowService;
-import com.mahanlei.service.TicketService;
-import com.mahanlei.service.UserService;
-import com.mahanlei.service.impl.MemberServiceImpl;
-import com.mahanlei.service.impl.ShowServiceImpl;
-import com.mahanlei.service.impl.TicketServiceImpl;
-import com.mahanlei.service.impl.UserServiceImpl;
+import com.mahanlei.service.*;
+import com.mahanlei.service.impl.*;
 
 public class ServiceFactory {
     public  static UserService getUserService(){
@@ -21,5 +15,8 @@ public class ServiceFactory {
     }
     public static TicketService getTicketService(){
         return TicketServiceImpl.getTicketService();
+    }
+    public static StadiumService getStadiumService(){
+        return StadiumServiceImpl.getStadiumService();
     }
 }

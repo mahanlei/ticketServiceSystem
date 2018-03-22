@@ -19,7 +19,7 @@ public interface ShowService {
      * @return
      */
     public ShowInfo getShowInfo(int showId);
-
+public List<ShowInfo> getStaShow(String staId);
     /**
      * 场馆发布一场演出
      * @param showInfo

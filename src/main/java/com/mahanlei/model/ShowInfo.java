@@ -17,6 +17,27 @@ public class ShowInfo {
     private ShowType type;
     private String picture;
     private String description;
+    private int showState;
+
+    public ShowInfo(int showId, String name, Date startTime, Date endTime, ShowType type, String picture, String description, int showState) {
+        this.showId = showId;
+        this.name = name;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.type = type;
+        this.picture = picture;
+        this.description = description;
+        this.showState = showState;
+    }
+
+    public int getShowState() {
+
+        return showState;
+    }
+
+    public void setShowState(int showState) {
+        this.showState = showState;
+    }
 
     public ShowInfo(){
 
