@@ -447,6 +447,35 @@ return Message.SELECT_SUCCESS;
         return tidList;
     }
 
+    public int getATid(String mid, int showId, int stadiumId, int seatRow, int seatColumn) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        int  tid=0;
+        try {
+            statement=connection.prepareStatement("SELECT tid FROM ticket WHERE mid=? AND showId=? AND  stadiumId=? AND seatRow=? AND seatColumn=? AND state=1");
+            statement.setString(1,mid);
+            statement.setInt(2,showId);
+            statement.setInt(3,stadiumId);
+            statement.setInt(4,seatRow);
+            statement.setInt(5,seatColumn);
+            resultSet =  statement.executeQuery();
+            while (resultSet.next()){
+                tid=resultSet.getInt("tid");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+
+        return tid;
+    }
+
+
     public List<Integer> getMyTicketsId(String mid, int state) {
         Connection connection=daoHelper.getConnection();
         PreparedStatement statement=null;

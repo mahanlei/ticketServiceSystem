@@ -19,4 +19,7 @@ public class ServiceFactory {
     public static StadiumService getStadiumService(){
         return StadiumServiceImpl.getStadiumService();
     }
+    public static SeatService getSeatService(){
+        return SeatServiceImpl.getSeatService();
+    }
 }

@@ -121,6 +121,7 @@ public class MemberDaoImpl  implements MemberDao {
         int points = 0;
         int state = 0;
         String code = null;
+        MemberInfo memberInfo = null;
         try {
             statement = connection.prepareStatement("SELECT * FROM memberinfo WHERE  mid=?");
             statement.setString(1, mid);
@@ -132,14 +133,16 @@ public class MemberDaoImpl  implements MemberDao {
                 points = resultSet.getInt("points");
                 state = resultSet.getInt("state");
                 code = resultSet.getString("code");
+                memberInfo = new MemberInfo(mid, age, email, rank, points, state, code);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
         }
-        MemberInfo memberInfo = new MemberInfo(mid, age, email, rank, points, state, code);
         return memberInfo;
 
     }

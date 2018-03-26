@@ -98,18 +98,40 @@ public class ShowDaoImpl implements ShowDao {
         return showInfo;
     }
 
-    public Message addAShow(ShowInfo showInfo) {
+    @Override
+    public int getShowId(String name, int stadiumId, Date startTime) {
         Connection connection=daoHelper.getConnection();
         PreparedStatement statement=null;
         ResultSet resultSet=null;
-        int i=0;
-        int showID=showInfo.getShowId();
+
+        int showId=0;
+        Timestamp startTimeStamp = new Timestamp(startTime.getTime());
+
+        try {
+            statement=connection.prepareStatement("SELECT showId FROM showInfo  WHERE name=?AND stadiumId=? AND startTime=?  ");
+            statement.setString(1,name);
+            statement.setInt(2,stadiumId);
+            statement.setTimestamp(3, startTimeStamp);
+            resultSet=statement.executeQuery();
+            while (resultSet.next()){
+                showId=resultSet.getInt("showId");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+
+        return showId;
+    }
+
+    public Message addAShow(ShowInfo showInfo) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
         String name=showInfo.getName();
         int stadiumId=showInfo.getStadiumId();
-//        String address=showInfo.getAddress();
-//        String staName=showInfo.getStaName();
-//        int seatRows=showInfo.getSeatRows();
-//        int seatColumns=showInfo.getSeatColumns();
         Date startTime=showInfo.getStartTime();
         Timestamp startTimeStamp = new Timestamp(startTime.getTime());
         Date endTime=showInfo.getEndTime();
@@ -119,8 +141,7 @@ public class ShowDaoImpl implements ShowDao {
         String picture=showInfo.getPicture();
         String description=showInfo.getDescription();
         try {
-            statement=connection.prepareStatement("INSERT INTO showInfo (name,stadiumId,startTime,endTime,type,picture,description)" +
-                    "VALUES (?,?,?,?,?,?,?,)");
+            statement=connection.prepareStatement("INSERT INTO showInfo (name,stadiumId,startTime,endTime,type,picture,description,showState) VALUES (?,?,?,?,?,?,?,?)");
             statement.setString(1,name);
             statement.setInt(2,stadiumId);
             statement.setTimestamp(3,startTimeStamp);
@@ -128,19 +149,16 @@ public class ShowDaoImpl implements ShowDao {
             statement.setInt(5,type);
             statement.setString(6,picture);
             statement.setString(7,description);
-           i= statement.executeUpdate();
+            statement.setInt(8,showInfo.getShowState());
+            statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
-            daoHelper.closeResult(resultSet);
             daoHelper.closePreparedStatement(statement);
             daoHelper.closeConnection(connection);
         }
-        if(i>0){
+
             return Message.RELEASE_SUCCESS;
-        }else {
-            return Message.RELEASE_FAILED;
-        }
 
     }
 

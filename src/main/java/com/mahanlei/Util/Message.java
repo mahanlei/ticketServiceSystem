@@ -32,5 +32,7 @@ public enum Message {
     CHECK_FAILED,
 
     NO_NEED,
+    UNPAY_SUCCESS,
+    UNPAY_FAILED,
 
 }

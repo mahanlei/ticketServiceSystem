@@ -1,5 +1,6 @@
 package com.mahanlei.controller;
 
+import com.mahanlei.Util.CalculatePrice;
 import com.mahanlei.Util.TransDataType;
 import com.mahanlei.factory.DaoFactory;
 import com.mahanlei.factory.ServiceFactory;
@@ -60,7 +61,7 @@ TicketService ticketService=ServiceFactory.getTicketService();
 
         List<Seat> seatList=ticketService.getUnoccupiedSeat(1,1,7);
 
-        System.out.println(TransDataType.intToString(123));
+        System.out.println(CalculatePrice.getSeatPrice(60,13,100,25,66.0));
 ////System.out.println(seatList.size());
 //System.out.println(DaoFactory.getTicketDao().getTicketInfo(DaoFactory.getTicketDao().getMyTicketsId("ma123",1).get(0)).getCreatedTime());
 //        List<Integer> tidList=DaoFactory.getTicketDao().getMyTicketsId(mid,1);

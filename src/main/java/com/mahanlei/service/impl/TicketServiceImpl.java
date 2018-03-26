@@ -4,10 +4,7 @@ import com.mahanlei.Util.CalculatePrice;
 import com.mahanlei.Util.Message;
 import com.mahanlei.factory.DaoFactory;
 import com.mahanlei.factory.ServiceFactory;
-import com.mahanlei.model.Seat;
-import com.mahanlei.model.ShowInfo;
-import com.mahanlei.model.Ticket;
-import com.mahanlei.model.TicketInfoBrief;
+import com.mahanlei.model.*;
 import com.mahanlei.service.TicketService;
 
 import java.text.SimpleDateFormat;
@@ -22,9 +19,6 @@ public class TicketServiceImpl implements TicketService {
         return ticketService;
     }
 
-    public List<Seat> getAllSeat(int showId, int stadiumId) {
-        return DaoFactory.getTicketDao().getAllSeat(showId, stadiumId);
-    }
 
     public List<Seat> getSeats(int showId, int stadiumId, int row) {
         return DaoFactory.getTicketDao().getSeats(showId,stadiumId,row);
@@ -62,7 +56,6 @@ public class TicketServiceImpl implements TicketService {
     public Message doPay(List<Integer> ticketList,double totalPayPrice) {
         List<Message>  updateTicketStateList=new ArrayList<Message>();
         for(int i=0;i<ticketList.size();i++){
-            Ticket ticket = DaoFactory.getTicketDao().getTicketInfo(ticketList.get(i));
             Message updateTicketState = DaoFactory.getTicketDao().updateTicketState(ticketList.get(i), 1);
             updateTicketStateList.add(updateTicketState);
             //更新用户账户余额/消费总额,账单的状态
@@ -153,7 +146,7 @@ public class TicketServiceImpl implements TicketService {
         Message updateMemRank=ServiceFactory.getMemberService().updateMemRank(ticket.getMid());
         Message profitToSta = DaoFactory.getTicketDao().updateProfit(String.valueOf(ticket.getStadiumId()), price * 0.6);
         Message profitToMan = DaoFactory.getTicketDao().updateProfit("0000000", price * 0.4);
-        if (updateTicket.equals(Message.UPDATE_SUCCESS)&&updateMemRank.equals(Message.UPDATE_SUCCESS)&&
+        if (updateTicket.equals(Message.UPDATE_SUCCESS)&&
                 updatePoints.equals(Message.UPDATE_SUCCESS) && profitToSta.equals(Message.UPDATE_SUCCESS)
                 && profitToMan.equals(Message.UPDATE_SUCCESS)) {
             return Message.CHECK_SUCCESS;
@@ -162,6 +155,10 @@ public class TicketServiceImpl implements TicketService {
 
     public List<Integer> getTid(String mid, int showId, int stadiumId,int state) {
         return DaoFactory.getTicketDao().getTid(mid,showId,stadiumId,state);
+    }
+
+    public int getATid(String mid, int showId, int stadiumId, int seatRow, int seatColumn) {
+        return DaoFactory.getTicketDao().getATid(mid,showId,stadiumId,seatRow,seatColumn);
     }
 
     public List<TicketInfoBrief> getMyTicketInfo(String mid, int state) {
@@ -184,21 +181,40 @@ public class TicketServiceImpl implements TicketService {
       return ticketInfoBriefList;
     }
 
-    public double getDisPrice(int tid, int discoutType) {
+    public double getDisPrice(int tid, int discountType) {
 
         Ticket ticket = DaoFactory.getTicketDao().getTicketInfo(tid);
         double price = DaoFactory.getTicketDao().getSeatPrice(ticket.getShowId(), ticket.getStadiumId(),
                 ticket.getSeatRow(), ticket.getSeatColumn());
+//        System.out.println(price);
+        int memRank=0;
+        if(ServiceFactory.getMemberService().getMemberInfo(ticket.getMid())!=null){
+            memRank=  ServiceFactory.getMemberService().getMemberInfo(ticket.getMid()).getRank();
+        }
+        if(discountType==2){
+            DiscountCoupon discountCoupon=new DiscountCoupon(ticket.getMid(),1,0,0,0);
+            Message useDis=ServiceFactory.getMemberService().useDis(discountCoupon);
 
-        int memRank=  ServiceFactory.getMemberService().getMemberInfo(ticket.getMid()).getRank();
-        if(discoutType==0){
-            return price;
-        }else {
-            double disPrice = CalculatePrice.caculatePrice(price, discoutType, memRank);
+        }else if(discountType==3){
+            DiscountCoupon discountCoupon=new DiscountCoupon(ticket.getMid(),0,1,0,0);
+            Message useDis=ServiceFactory.getMemberService().useDis(discountCoupon);
+
+
+        }else if(discountType==4){
+            DiscountCoupon discountCoupon=new DiscountCoupon(ticket.getMid(),0,0,1,0);
+            Message useDis=ServiceFactory.getMemberService().useDis(discountCoupon);
+
+        }else if(discountType==5){
+            DiscountCoupon discountCoupon=new DiscountCoupon(ticket.getMid(),0,0,0,1);
+            Message useDis=ServiceFactory.getMemberService().useDis(discountCoupon);
+
+        }
+        double disPrice = CalculatePrice.calculatePrice(price, discountType, memRank);
+//        System.out.println(disPrice);
             Message updatePriceMessage = DaoFactory.getTicketDao().updateTicketPayPrice(tid, disPrice);
             if (updatePriceMessage.equals(Message.UPDATE_SUCCESS)) {
                 return disPrice;
             } else return 0;
         }
-    }
+
 }

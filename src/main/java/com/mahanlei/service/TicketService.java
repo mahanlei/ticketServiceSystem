@@ -9,14 +9,6 @@ import java.util.List;
 
 public interface TicketService {
     /**
-     * 获得某场演出的全部座位信息（已售，未售）
-     * @param showId
-     * @param stadiumId
-     * @return
-     */
-    public List<Seat> getAllSeat(int showId,int stadiumId);
-
-    /**
      * 获得每一行中座位的状态
      * @param showId
      * @param stadiumId
@@ -86,6 +78,7 @@ public interface TicketService {
      * @return
      */
     public List<Integer> getTid(String mid,int showId,int stadiumId,int state);
+    public int getATid(String mid,int showId,int stadiumId,int seatRow,int seatColumn);
 
     /**
      * 获取某用户的某种类型票务信息
@@ -97,8 +90,8 @@ public interface TicketService {
     /**
      * 选择了优惠券后获得实际支付价格
      * @param tid
-     * @param discoutType
+     * @param discountType
      * @return
      */
-    public double getDisPrice(int tid,int discoutType);
+    public double getDisPrice(int tid,int discountType);
 }

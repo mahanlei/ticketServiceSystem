@@ -17,4 +17,7 @@ public static TicketDao getTicketDao(){
 public static StadiumDao getStadiumDao(){
     return StadiumDaoImpl.getStadiumDao();
 }
+public static SeatDao getSeatDao(){
+    return SeatDaoImpl.getSeatDao();
+}
 }

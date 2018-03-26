@@ -2,6 +2,9 @@ package com.mahanlei.service;
 
 import com.mahanlei.Util.Message;
 import com.mahanlei.model.StadiumInfo;
+import com.mahanlei.model.Ticket;
+
+import java.util.List;
 
 public interface StadiumService {
     /**
@@ -32,5 +35,19 @@ public interface StadiumService {
      * @return
      */
     public Message updateStaInfo(int stadiumId,String staName);
+
+    /**
+     * 线下购票支付，修改Ticket状态
+     * @param ticketList
+     * @return
+     */
+    public Message doPay(List<Integer> ticketList);
+
+    /**
+     * 线下购票取消支付，修改Ticket与seat状态
+     * @param ticketList
+     * @return
+     */
+    public Message doUnPay(List<Integer> ticketList);
 
 }

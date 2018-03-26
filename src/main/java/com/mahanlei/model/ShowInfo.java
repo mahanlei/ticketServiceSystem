@@ -29,28 +29,6 @@ public class ShowInfo {
         this.description = description;
         this.showState = showState;
     }
-
-    public int getShowState() {
-
-        return showState;
-    }
-
-    public void setShowState(int showState) {
-        this.showState = showState;
-    }
-
-    public ShowInfo(){
-
-    }
-
-    public String getStaName() {
-        return staName;
-    }
-
-    public void setStaName(String staName) {
-        this.staName = staName;
-    }
-
     public ShowInfo(int showId, String name, int stadiumId, String staName, String address, int seatRows, int seatColumns, Date startTime, Date endTime, ShowType type, String picture, String description) {
         this.showId = showId;
         this.name = name;
@@ -66,6 +44,41 @@ public class ShowInfo {
         this.description = description;
 
     }
+
+    public ShowInfo(String name, int stadiumId, Date startTime, Date endTime, ShowType type, String picture, String description, int showState) {
+        this.name = name;
+        this.stadiumId = stadiumId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.type = type;
+        this.picture = picture;
+        this.description = description;
+        this.showState = showState;
+    }
+
+    public ShowInfo(){
+
+    }
+    public int getShowState() {
+
+        return showState;
+    }
+
+    public void setShowState(int showState) {
+        this.showState = showState;
+    }
+
+
+
+    public String getStaName() {
+        return staName;
+    }
+
+    public void setStaName(String staName) {
+        this.staName = staName;
+    }
+
+
     public int getStadiumId() {
         return stadiumId;
     }

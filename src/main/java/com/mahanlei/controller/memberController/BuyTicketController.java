@@ -9,6 +9,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,17 +78,21 @@ public class BuyTicketController {
                                   @RequestParam("showId") int showId,
                                   @RequestParam("stadiumId") int stadiumId,
                                   @RequestParam("discountType") int discountType) {
+//        System.out.println(mid+","+showId+","+stadiumId+","+discountType);
         List<Integer> tidList = ticketService.getTid(mid, showId, stadiumId,0);
+
         List<Seat> seatList=new ArrayList<Seat>();
         double totalPayPrice = 0.0;
         for (int i = 0; i < tidList.size(); i++) {
-            totalPayPrice += ticketService.getDisPrice(tidList.get(i), discountType);
+            totalPayPrice =totalPayPrice+ ticketService.getDisPrice(tidList.get(i), discountType);
             Ticket ticket=ticketService.getTicketInfo(tidList.get(i)) ;
             Seat seat=new Seat(ticket.getShowId(),ticket.getStadiumId(),ticket.getSeatRow(),ticket.getSeatColumn(),ticket.getPayPrice(),ticket.getState());
             seatList.add(seat);
         }
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("totalPayPrice", totalPayPrice);
+//        System.out.println(totalPayPrice);
+        DecimalFormat df = new DecimalFormat("0.00");
+        jsonObject.put("totalPayPrice", Double.valueOf(df.format(totalPayPrice)));
         jsonObject.put("seats",seatList);
         return jsonObject;
     }
@@ -114,6 +119,7 @@ public class BuyTicketController {
                             @RequestParam("stadiumId") int stadiumId,
                             @RequestParam("totalPayPrice") double totalPayPrice) {
         List<Integer> tidList = ticketService.getTid(mid, showId, stadiumId,0);
+
         Message message = ticketService.doPay(tidList, totalPayPrice);
         JSONObject jsonObject = new JSONObject();
         if (message.equals(Message.PAY_SUCCESS)) {
