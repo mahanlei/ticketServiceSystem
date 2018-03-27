@@ -29,6 +29,14 @@ public class StadiumInfo {
         this.staID = staID;
     }
 
+    public StadiumInfo(String staName, String address, int seatRows, int seatColumns, int state) {
+        this.staName = staName;
+        this.address = address;
+        this.seatRows = seatRows;
+        this.seatColumns = seatColumns;
+        this.state = state;
+    }
+
     public StadiumInfo() {
     }
 

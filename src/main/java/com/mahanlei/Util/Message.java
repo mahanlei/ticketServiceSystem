@@ -34,5 +34,7 @@ public enum Message {
     NO_NEED,
     UNPAY_SUCCESS,
     UNPAY_FAILED,
+    APPLY_SUCCESS,
+    APPLY_FAILED,
 
 }

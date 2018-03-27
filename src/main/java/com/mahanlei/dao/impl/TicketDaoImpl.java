@@ -502,4 +502,57 @@ return Message.SELECT_SUCCESS;
         return tidList;
     }
 
+    @Override
+    public List<Integer> getStaTickets(int stadiumId, int state) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        List<Integer> tidList=new ArrayList<Integer>();
+        try {
+            statement=connection.prepareStatement("SELECT tid FROM ticket WHERE stadiumId=? AND state=?");
+            statement.setInt(1,stadiumId);
+            statement.setInt(2,state);
+            resultSet =  statement.executeQuery();
+            while (resultSet.next()){
+                int  tid=resultSet.getInt("tid");
+                tidList.add(tid);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+
+        return tidList;
+    }
+
+    @Override
+    public int getShowTickets(int showId, int stadiumId, int state)  {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        int result=0;
+        try {
+            statement=connection.prepareStatement("SELECT count(*) as number FROM ticket WHERE showId=? AND stadiumId=? AND state=?");
+            statement.setInt(1,showId);
+            statement.setInt(2,stadiumId);
+            statement.setInt(3,state);
+            resultSet=statement.executeQuery();
+            while (resultSet.next()){
+                result=resultSet.getInt("number");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+        return result;
+
+    }
+
 }

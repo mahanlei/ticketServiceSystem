@@ -36,21 +36,33 @@ public class StaLoginController {
         }
         return r;
     }
-
-    @RequestMapping(value = "/changeInfo",method = RequestMethod.POST)
-    public JSONObject changeStaInfo(@RequestParam("staId") String  staId,
-                                    @RequestParam("staName") String staName){
+    @RequestMapping(value = "/checkState",method = RequestMethod.POST)
+    public JSONObject checkStaState(@RequestParam("staId") String staId){
         JSONObject jsonObject=new JSONObject();
-        Message message=stadiumService.updateStaInfo(Integer.parseInt(staId),staName);
-        if(message.equals(Message.UPDATE_SUCCESS)){
-            jsonObject.put("code","200");
-            jsonObject.put("msg","成功提交修改申请");
-        }
-        else {
-            jsonObject.put("code","500");
-            jsonObject.put("msg","提交修改申请失败");
-        }
+        StadiumInfo stadiumInfo=stadiumService.getStadiumInfo(Integer.parseInt(staId));
+        jsonObject.put("staState",stadiumInfo.getState());
         return jsonObject;
+    }
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    public JSONObject staRegister(@RequestParam("staName") String staName,
+                                  @RequestParam("address") String address,
+                                  @RequestParam("seatRows") int seatsRows,
+                                  @RequestParam("seatColumns") int seatColumns,
+    @RequestParam("password") String password){
+
+        JSONObject jsonObject=new JSONObject();
+        StadiumInfo stadiumInfo=new StadiumInfo(staName,address,seatsRows,seatColumns,0);
+Message message=stadiumService.addStadium(stadiumInfo,password);
+
+if(message.equals(Message.REGISTER_SUCCESS)){
+    jsonObject.put("code", "200");
+    jsonObject.put("msg", "注册成功，等待审批");
+}else{
+    jsonObject.put("code", "500");
+    jsonObject.put("msg", "注册失败");
+}
+return jsonObject;
+
     }
 
 }

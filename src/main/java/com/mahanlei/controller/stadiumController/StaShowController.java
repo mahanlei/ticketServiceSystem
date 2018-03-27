@@ -10,7 +10,6 @@ import com.mahanlei.service.StadiumService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,7 +20,6 @@ import java.util.List;
 @CrossOrigin(origins="http://localhost:8081")//允许跨域请求
 @RequestMapping(value = "/stadium")
 public class StaShowController {
-    StadiumService stadiumService= ServiceFactory.getStadiumService();
 ShowService showService=ServiceFactory.getShowService();
 SeatService seatService=ServiceFactory.getSeatService();
 @RequestMapping(value = "/getExistShow",method = RequestMethod.POST)

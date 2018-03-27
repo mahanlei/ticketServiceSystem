@@ -2,6 +2,7 @@ package com.mahanlei.service.impl;
 
 import com.mahanlei.Util.CalculatePrice;
 import com.mahanlei.Util.Message;
+import com.mahanlei.Util.TransDataType;
 import com.mahanlei.factory.DaoFactory;
 import com.mahanlei.factory.ServiceFactory;
 import com.mahanlei.model.*;
@@ -144,7 +145,7 @@ public class TicketServiceImpl implements TicketService {
         Message updateTicket=DaoFactory.getTicketDao().updateTicketState(tid,2);
         Message updatePoints = DaoFactory.getTicketDao().updatePoints(ticket.getMid(), points);
         Message updateMemRank=ServiceFactory.getMemberService().updateMemRank(ticket.getMid());
-        Message profitToSta = DaoFactory.getTicketDao().updateProfit(String.valueOf(ticket.getStadiumId()), price * 0.6);
+        Message profitToSta = DaoFactory.getTicketDao().updateProfit(TransDataType.intToString(ticket.getStadiumId()), price * 0.6);
         Message profitToMan = DaoFactory.getTicketDao().updateProfit("0000000", price * 0.4);
         if (updateTicket.equals(Message.UPDATE_SUCCESS)&&
                 updatePoints.equals(Message.UPDATE_SUCCESS) && profitToSta.equals(Message.UPDATE_SUCCESS)
@@ -179,6 +180,26 @@ public class TicketServiceImpl implements TicketService {
           }
       }
       return ticketInfoBriefList;
+    }
+
+    @Override
+    public List<StaTicket> getStaTicketInfo(int stadiumId, int state) {
+        List<Integer> tidList=DaoFactory.getTicketDao().getStaTickets(stadiumId,state);
+        List<StaTicket> staTickets=new ArrayList<StaTicket>();
+        if(tidList.size()!=0){
+            for(int i=0;i<tidList.size();i++){
+                Ticket ticket=DaoFactory.getTicketDao().getTicketInfo(tidList.get(i));
+                int showId=ticket.getShowId();
+                MemberInfo memberInfo=DaoFactory.getMemberDao().getMemberInfo(ticket.getMid());
+                String mid=memberInfo.getMid();
+                ShowInfo showInfo=DaoFactory.getShowDao().getShowInfo(showId);
+                StaTicket staTicket=new StaTicket(ticket.getTid(),mid,showInfo.getName(),
+                        showInfo.getPicture(),ticket.getSeatRow(),ticket.getSeatColumn(),
+                        ticket.getCreatedTime(),ticket.getRefunedTime(),ticket.getPayPrice());
+                staTickets.add(staTicket);
+            }
+        }
+        return staTickets;
     }
 
     public double getDisPrice(int tid, int discountType) {
@@ -216,5 +237,10 @@ public class TicketServiceImpl implements TicketService {
                 return disPrice;
             } else return 0;
         }
+
+    @Override
+    public int getShowTickets(int showId, int stadiumId, int state) {
+        return DaoFactory.getTicketDao().getShowTickets(showId,stadiumId,state);
+    }
 
 }

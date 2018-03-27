@@ -2,6 +2,7 @@ package com.mahanlei.service;
 
 import com.mahanlei.Util.Message;
 import com.mahanlei.model.Seat;
+import com.mahanlei.model.StaTicket;
 import com.mahanlei.model.Ticket;
 import com.mahanlei.model.TicketInfoBrief;
 
@@ -88,10 +89,25 @@ public interface TicketService {
      */
     public List<TicketInfoBrief> getMyTicketInfo(String mid, int state);
     /**
+     * 获取某场馆的某种状态的全部订单
+     * @param stadiumId
+     * @param state
+     * @return
+     */
+    public List<StaTicket> getStaTicketInfo(int stadiumId, int state);
+    /**
      * 选择了优惠券后获得实际支付价格
      * @param tid
      * @param discountType
      * @return
      */
     public double getDisPrice(int tid,int discountType);
+    /**
+     * 获得某场演出特定状态的票的数量
+     * @param showId
+     * @param stadiumId
+     * @param state
+     * @return
+     */
+    public int getShowTickets(int showId,int stadiumId,int state);
 }

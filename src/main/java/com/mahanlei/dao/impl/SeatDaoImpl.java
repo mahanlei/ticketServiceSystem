@@ -7,6 +7,7 @@ import com.mahanlei.model.Seat;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -59,5 +60,29 @@ DaoHelper daoHelper=new DaoHelperImpl();
         return Message.UPDATE_SUCCESS;
         }
 
+    @Override
+    public int getSoldSeats(int showId, int stadiumId) {
+        Connection connection=daoHelper.getConnection();
+        PreparedStatement statement=null;
+        ResultSet resultSet=null;
+        int result=0;
+        try {
+            statement=connection.prepareStatement("SELECT count(*) AS number from seatinfo WHERE showId=? AND stadiumId=? AND state=1");
+            statement.setInt(1,showId);
+            statement.setInt(2,stadiumId);
+            resultSet=statement.executeQuery();
+            while (resultSet.next()){
+                result=resultSet.getInt("number");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            daoHelper.closeResult(resultSet);
+            daoHelper.closePreparedStatement(statement);
+            daoHelper.closeConnection(connection);
+        }
+        return result;
     }
+
+}
 

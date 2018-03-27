@@ -22,4 +22,7 @@ public class ServiceFactory {
     public static SeatService getSeatService(){
         return SeatServiceImpl.getSeatService();
     }
+    public static StaticsService getStaticsService(){
+        return StaticsServiceImpl.getStaticsService();
+    }
 }

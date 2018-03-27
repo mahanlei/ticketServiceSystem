@@ -20,4 +20,7 @@ public static StadiumDao getStadiumDao(){
 public static SeatDao getSeatDao(){
     return SeatDaoImpl.getSeatDao();
 }
+public static StatisticsDao getStatisticsDao(){
+    return StatisticsDaoImpl.getStatisticsDao();
+}
 }

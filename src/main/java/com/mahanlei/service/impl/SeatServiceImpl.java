@@ -42,4 +42,9 @@ seatList.add(seat);
             return Message.UPDATE_FAILED;
         }
     }
+
+    @Override
+    public int getSoldSeats(int showId, int stadiumId) {
+        return DaoFactory.getSeatDao().getSoldSeats(showId,stadiumId);
+    }
 }

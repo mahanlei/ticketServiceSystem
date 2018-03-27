@@ -2,6 +2,7 @@ package com.mahanlei.service.impl;
 
 import com.mahanlei.Util.Message;
 import com.mahanlei.factory.DaoFactory;
+import com.mahanlei.model.Application;
 import com.mahanlei.model.Seat;
 import com.mahanlei.model.StadiumInfo;
 import com.mahanlei.model.Ticket;
@@ -21,8 +22,19 @@ public class StadiumServiceImpl  implements StadiumService{
         return DaoFactory.getStadiumDao().getStadiumInfo(stadiumId);
     }
 
-    public Message addStadium(StadiumInfo stadiumInfo) {
-       return DaoFactory.getStadiumDao().addStadium(stadiumInfo);
+    public Message addStadium(StadiumInfo stadiumInfo,String password) {
+
+        Message message1= DaoFactory.getStadiumDao().addStadium(stadiumInfo);
+        int staId=DaoFactory.getStadiumDao().getStaId(stadiumInfo.getStaName(),stadiumInfo.getAddress());
+        Application application=new Application(staId,0,1,stadiumInfo.getStaName(),
+                stadiumInfo.getAddress(),stadiumInfo.getSeatRows(),stadiumInfo.getSeatColumns());
+       Message message=DaoFactory.getStadiumDao().addApplication(application);
+Message message2=DaoFactory.getStadiumDao().addStaPass(staId,password);
+Message message3=DaoFactory.getStadiumDao().addStaProfit(staId);
+        if(message.equals(Message.APPLY_SUCCESS)&&message1.equals(Message.UPDATE_SUCCESS)
+                &&message2.equals(Message.UPDATE_SUCCESS)&&message3.equals(Message.UPDATE_SUCCESS)){
+            return Message.REGISTER_SUCCESS;
+        }else return Message.REGISTER_FAILED;
     }
 
     public Message activeStadium(int stadiumId) {
@@ -30,7 +42,12 @@ public class StadiumServiceImpl  implements StadiumService{
     }
 
     public Message updateStaInfo(int stadiumId, String staName) {
-        return DaoFactory.getStadiumDao().updateStaInfo(stadiumId,staName);
+        Application application=new Application(stadiumId,0,2,staName);
+        Message message=DaoFactory.getStadiumDao().addApplication(application);
+       Message message1= DaoFactory.getStadiumDao().updateStaInfo(stadiumId,staName);
+        if(message.equals(Message.APPLY_SUCCESS)&&message1.equals(Message.UPDATE_SUCCESS)){
+            return Message.UPDATE_SUCCESS;
+        }else return Message.UPDATE_FAILED;
     }
 
     public Message doPay(List<Integer> ticketList) {

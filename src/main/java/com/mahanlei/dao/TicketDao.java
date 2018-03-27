@@ -8,6 +8,13 @@ import java.util.Date;
 import java.util.List;
 
 public interface TicketDao {
+    /**
+     * 获得某行的总座位数（包含状态）
+     * @param showId
+     * @param stadiumId
+     * @param row
+     * @return
+     */
 
 public List<Seat> getSeats(int showId, int stadiumId,int row);
     /**
@@ -108,6 +115,15 @@ public List<Seat> getSeats(int showId, int stadiumId,int row);
      */
     public List<Integer> getTid(String mid,int showId,int stadiumId,int state);
 
+    /**
+     * 获得某张票的ID
+     * @param mid
+     * @param showId
+     * @param stadiumId
+     * @param seatRow
+     * @param seatColumn
+     * @return
+     */
     public int getATid(String mid,int showId,int stadiumId,int seatRow,int seatColumn);
     /**
      * 获取某用户的某种类型票务信息
@@ -117,5 +133,21 @@ public List<Seat> getSeats(int showId, int stadiumId,int row);
      */
     public List<Integer> getMyTicketsId(String mid,int state);
 
+    /**
+     * 获取某场馆的某种状态的全部订单
+     * @param stadiumId
+     * @param state
+     * @return
+     */
+    public List<Integer> getStaTickets(int stadiumId,int state);
+
+    /**
+     * 获得某场演出特定状态的票的数量
+     * @param showId
+     * @param stadiumId
+     * @param state
+     * @return
+     */
+     public int getShowTickets(int showId,int stadiumId,int state);
 
 }

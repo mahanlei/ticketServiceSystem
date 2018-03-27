@@ -15,4 +15,12 @@ public interface SeatService {
      * @return
      */
  public Message addSeats(String showName,int stadiumId,Date startTime,double price);
+    /**
+     * 获得某个场馆某场演出的已售座位数
+     * @param showId
+     * @param stadiumId
+     * @return
+     */
+    public int getSoldSeats(int showId,int stadiumId);
+
 }

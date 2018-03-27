@@ -19,7 +19,7 @@ public interface StadiumService {
      * @param stadiumInfo
      * @return
      */
-    public Message addStadium(StadiumInfo stadiumInfo);
+    public Message addStadium(StadiumInfo stadiumInfo,String password);
 
     /**
      * 场馆注册申请/修改信息得到审批，状态置为1
@@ -29,7 +29,7 @@ public interface StadiumService {
     public Message activeStadium(int stadiumId);
 
     /**
-     * 场馆申请修改信息（场馆名称），先改掉然后将状态置为2
+     * 场馆申请修改信息（场馆名称），先改掉然后将状态置为2,同时生成一条申请记录
      * @param stadiumId
      * @param staName
      * @return

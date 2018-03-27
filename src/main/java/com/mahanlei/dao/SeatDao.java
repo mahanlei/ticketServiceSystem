@@ -13,4 +13,14 @@ public interface SeatDao {
      */
     public Message addSeats(List<Seat> seats);
 
+    /**
+     * 获得某个场馆某场演出的已售座位数
+     * @param showId
+     * @param stadiumId
+     * @return
+     */
+    public int getSoldSeats(int showId,int stadiumId);
+
+
+
 }
