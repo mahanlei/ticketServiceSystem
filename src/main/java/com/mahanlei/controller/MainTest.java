@@ -24,12 +24,14 @@ public class MainTest {
 //        List<ShowInfo> shows=showService.getStaShow("0000001");
 //        System.out.println(shows.size());
 //        System.out.println(shows.get(1).getShowId());
-       List<TicketCount> ticketCounts=ServiceFactory.getStaticsService().getTicketCount();
-//        List<TicketCount> ticketCounts1=DaoFactory.getStatisticsDao().getTicketCount();
-        for(int i=0;i<ticketCounts.size();i++){
-            System.out.println(ticketCounts.get(i).getTime()+ticketCounts.get(i).getNumber());
-
-        }
+//       List<TicketCount> ticketCounts=ServiceFactory.getStaticsService().getTicketCount();
+//       int[]numbers=ServiceFactory.getStaticsService().countMemberByAge();
+////        List<TicketCount> ticketCounts1=DaoFactory.getStatisticsDao().getTicketCount();
+//        for(int i=0;i<numbers.length;i++){
+//            System.out.println(numbers[i]);
+//
+//        }
+        System.out.println(DaoFactory.getMemberDao().activeMember("ab7fc43482994293baee07faa912bf64"));
 //        System.out.println(ticketCounts1.get(1).getTime()+ticketCounts1.get(1).getNumber());
 
     }

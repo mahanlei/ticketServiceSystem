@@ -161,7 +161,7 @@ return ticketCounts;
         try {
             statement4=connection.prepareStatement("SELECT count(*) number FROM memberinfo WHERE age>=40 AND age<50 AND state=1");
             resultSet4=statement4.executeQuery();
-            while (resultSet1.next()){
+            while (resultSet4.next()){
                 result[3]=resultSet4.getInt("number");
             }
         } catch (SQLException e) {

@@ -31,6 +31,7 @@ public class MemberDaoImpl  implements MemberDao {
         PreparedStatement statement2 = null;
         PreparedStatement statement3 = null;
         PreparedStatement statement4 = null;
+        PreparedStatement statement5=null;
         ResultSet resultSet = null;
         try {
             statement1 = connection.prepareStatement("SELECT * from memberinfo WHERE mid=?");
@@ -71,9 +72,24 @@ public class MemberDaoImpl  implements MemberDao {
                         e.printStackTrace();
                     }
                     //存入个人优惠券信息
-                    statement4 = connection.prepareStatement("INSERT INTO discountcoupon VALUES (?,0,0,0,0,)");
+                    statement4 = connection.prepareStatement("INSERT INTO discountcoupon VALUES (?,0,0,0,0)");
                     statement4.setString(1, memberInfo.getMid());
                     statement4.executeUpdate();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    //存入个人账户信息
+                    statement5 = connection.prepareStatement("INSERT INTO memberbill VALUES (?,0.0,0.0)");
+                    statement5.setString(1, memberInfo.getMid());
+                    statement5.executeUpdate();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                     connection.commit();
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -88,6 +104,9 @@ public class MemberDaoImpl  implements MemberDao {
             daoHelper.closePreparedStatement(statement1);
             daoHelper.closePreparedStatement(statement2);
             daoHelper.closePreparedStatement(statement3);
+            daoHelper.closePreparedStatement(statement4);
+            daoHelper.closePreparedStatement(statement5);
+
             daoHelper.closeResult(resultSet);
         }
         return Message.REGISTER_SUCCESS;
@@ -97,18 +116,20 @@ public class MemberDaoImpl  implements MemberDao {
         int num = 0;
         Connection connection = daoHelper.getConnection();
         PreparedStatement statement = null;
-
         try {
-            statement = connection.prepareStatement("update memberinfo set state=1 AND rank=1 WHERE code=?");
+            statement = connection.prepareStatement("update memberinfo set state=1 , rank=1 WHERE code=?");
             statement.setString(1, code);
-            num = statement.executeUpdate();
+          num=  statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             daoHelper.closeConnection(connection);
             daoHelper.closePreparedStatement(statement);
         }
-        return num != 0;
+        if(num>0){
+            return true;
+        }else return false;
+
     }
 
     public MemberInfo getMemberInfo(String mid) {

@@ -7,48 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ebe4b18-40ca-4215-a1b6-b952fcf3e515" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManApplicationController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManStaticsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/ApplicationDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/ApplicationDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/model/StadiumShows.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/model/TicketCount.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/model/TicketPrice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/service/ApplicationService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/ApplicationServiceImpl.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/controller/managerController/ManagerLoginController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/controller/ManagerController/ManagerLoginController.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/managerController/ManagerLoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManaLoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/controller/MainTest.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/controller/MainTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/StatisticsDao.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/StatisticsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/DaoHelperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/DaoHelperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/StadiumDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/StadiumDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/MemberDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/MemberDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/StatisticsDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/dao/impl/StatisticsDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/factory/DaoFactory.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/factory/DaoFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/factory/ServiceFactory.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/factory/ServiceFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/service/StaticsService.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/service/StaticsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/mahanlei/service/impl/StaticsServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/mahanlei/service/impl/StaticsServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/controller/MainTest.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/controller/MainTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/StatisticsDao.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/StatisticsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/DaoHelperImpl.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/DaoHelperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/StadiumDaoImpl.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/StadiumDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/MemberDaoImpl.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/MemberDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/StatisticsDaoImpl.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/dao/impl/StatisticsDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/factory/DaoFactory.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/factory/DaoFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/factory/ServiceFactory.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/factory/ServiceFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/service/StaticsService.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/service/StaticsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/service/impl/StaticsServiceImpl.class" afterPath="$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/classes/com/mahanlei/service/impl/StaticsServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/46c80caa-809d-403e-b961-4b6d9d02e5c1.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/46c80caa-809d-403e-b961-4b6d9d02e5c1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/MainTest.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/MainTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/MemberDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/MemberDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/StatisticsDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/StatisticsDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/DaoHelperImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/DaoHelperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StadiumDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StadiumDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/MemberDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/MemberDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/factory/DaoFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/factory/DaoFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/factory/ServiceFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/factory/ServiceFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/service/StaticsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/service/StaticsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/StaticsServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/StaticsServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -87,6 +56,24 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="ticketSystem@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="ticketSystem" type="e3449647:DbNodeDescriptor" />
+        <item name="discountcoupon" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="ticketSystem@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="ticketSystem" type="e3449647:DbNodeDescriptor" />
+        <item name="memberbill" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="ticketSystem@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="ticketSystem" type="e3449647:DbNodeDescriptor" />
+        <item name="memberinfo" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="ticketSystem@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="ticketSystem" type="e3449647:DbNodeDescriptor" />
         <item name="profilt" type="e3449647:DbNodeDescriptor" />
       </path>
       <path>
@@ -118,47 +105,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StaticsService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/StaticsService.java">
+      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="285">
+              <caret line="33" column="102" lean-forward="false" selection-start-line="33" selection-start-column="102" selection-end-line="33" selection-end-column="102" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShowInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/model/ShowInfo.java">
+      <file leaf-file-name="StatisticsDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaticsServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/StaticsServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="141" column="17" lean-forward="true" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
+            <state relative-caret-position="212">
+              <caret line="163" column="29" lean-forward="false" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6235#6236#0" expanded="true" />
-                <element signature="e#6306#6307#0" expanded="true" />
+                <marker date="1522202984068" expanded="true" signature="956:996" ph="select profi... profilt" />
+                <marker date="1522202984068" expanded="true" signature="1794:1956" ph="SELECT DATE_... " />
+                <marker date="1522202984068" expanded="true" signature="2820:2986" ph="SELECT DATE_... " />
+                <marker date="1522202984068" expanded="true" signature="3849:3882" ph="SELECT stadi... stadiuminfo" />
+                <marker date="1522202984068" expanded="true" signature="4970:5044" ph="SELECT count... memberinfo" />
+                <marker date="1522202984068" expanded="true" signature="5350:5425" ph="SELECT count... memberinfo" />
+                <marker date="1522202984068" expanded="true" signature="5731:5806" ph="SELECT count... memberinfo" />
+                <marker date="1522202984068" expanded="true" signature="6112:6187" ph="SELECT count... memberinfo" />
+                <marker date="1522202984068" expanded="true" signature="6493:6557" ph="SELECT count... memberinfo" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManStaticsController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManStaticsController.java">
+      <file leaf-file-name="MemberDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/MemberDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="41" />
+            <state relative-caret-position="157">
+              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1522204665071" expanded="true" signature="1179:1215" ph="SELECT * fro... memberinfo" />
+                <marker date="1522204665071" expanded="true" signature="1652:1697" ph="insert INTO memberinfo... " />
+                <marker date="1522204665071" expanded="true" signature="2492:2522" ph="INSERT INTO userp... " />
+                <marker date="1522204665071" expanded="true" signature="2981:3026" ph="INSERT INTO discountcoupon... " />
+                <marker date="1522204665071" expanded="true" signature="3429:3470" ph="INSERT INTO memberbill... " />
+                <marker date="1522204665071" expanded="true" signature="4754:4805" ph="update membe... " />
+                <marker date="1522204665071" expanded="true" signature="5621:5658" ph="SELECT * FRO... memberinfo" />
+                <marker date="1522204665071" expanded="true" signature="6745:6792" ph="update membe... " />
+                <marker date="1522204665071" expanded="true" signature="7602:7642" ph="SELECT * FRO... discountcoupon" />
+                <marker date="1522204665071" expanded="true" signature="9231:9284" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="9419:9470" ph="UPDATE membe... " />
+                <marker date="1522204665071" expanded="true" signature="9656:9709" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="9844:9895" ph="UPDATE membe... " />
+                <marker date="1522204665071" expanded="true" signature="10081:10134" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="10269:10320" ph="UPDATE membe... " />
+                <marker date="1522204665071" expanded="true" signature="10506:10559" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="10694:10745" ph="UPDATE membe... " />
+                <marker date="1522204665071" expanded="true" signature="12080:12133" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="12318:12371" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="12556:12609" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="12794:12847" ph="UPDATE disco... " />
+                <marker date="1522204665071" expanded="true" signature="13585:13625" ph="UPDATE membe... " />
+                <marker date="1522204665071" expanded="true" signature="14355:14401" ph="SELECT consu... memberbill" />
               </folding>
             </state>
           </provider>
@@ -167,44 +172,35 @@
       <file leaf-file-name="BuyTicketController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/memberController/BuyTicketController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="317">
+              <caret line="124" column="46" lean-forward="false" selection-start-line="124" selection-start-column="35" selection-end-line="124" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/MemberDao.java">
+      <file leaf-file-name="TicketServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/TicketServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StadiumShows.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/model/StadiumShows.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="-162">
+              <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
               <folding>
-                <element signature="e#265#266#0" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
-                <element signature="e#356#357#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#433#434#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1537#1545#0" expanded="true" />
+                <element signature="e#2368#2377#0" expanded="true" />
+                <element signature="e#3343#3349#0" expanded="true" />
+                <element signature="e#7722#7739#0" expanded="true" />
+                <element signature="e#8738#8749#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatisticsDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/StatisticsDao.java">
+      <file leaf-file-name="ManaLoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManaLoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -212,41 +208,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StadiumDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StadiumDaoImpl.java">
+      <file leaf-file-name="MemberDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/MemberDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="1005">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/UserDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
-                <marker date="1522177011892" expanded="true" signature="1020:1063" ph="SELECT * FRO... stadiuminfo" />
-                <marker date="1522177011892" expanded="true" signature="2196:2259" ph="SELECT stadi... stadiuminfo" />
-                <marker date="1522177011892" expanded="true" signature="2990:3076" ph="INSERT INTO stadiuminfo... " />
-                <marker date="1522177011892" expanded="true" signature="3909:3939" ph="INSERT INTO userp... " />
-                <marker date="1522177011892" expanded="true" signature="4596:4628" ph="INSERT INTO profilt... " />
-                <marker date="1522177011892" expanded="true" signature="5267:5316" ph="UPDATE stadi... " />
-                <marker date="1522177011892" expanded="true" signature="5968:6028" ph="UPDATE stadi... " />
-                <marker date="1522177011892" expanded="true" signature="6716:6823" ph="INSERT INTO application... " />
+                <marker date="1520155718092" expanded="true" signature="758:797" ph="select passw... userp" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatisticsDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/memberController/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
-              <caret line="178" column="14" lean-forward="false" selection-start-line="178" selection-start-column="14" selection-end-line="178" selection-end-column="14" />
-              <folding>
-                <marker date="1522201313379" expanded="true" signature="956:996" ph="select profi... profilt" />
-                <marker date="1522201313379" expanded="true" signature="1794:1956" ph="SELECT DATE_... " />
-                <marker date="1522201313379" expanded="true" signature="2820:2986" ph="SELECT DATE_... " />
-                <marker date="1522201313379" expanded="true" signature="3849:3882" ph="SELECT stadi... stadiuminfo" />
-                <marker date="1522201313379" expanded="true" signature="4970:5044" ph="SELECT count... memberinfo" />
-                <marker date="1522201313379" expanded="true" signature="5350:5425" ph="SELECT count... memberinfo" />
-                <marker date="1522201313379" expanded="true" signature="5731:5806" ph="SELECT count... memberinfo" />
-                <marker date="1522201313379" expanded="true" signature="6112:6187" ph="SELECT count... memberinfo" />
-                <marker date="1522201313379" expanded="true" signature="6493:6557" ph="SELECT count... memberinfo" />
-              </folding>
+            <state relative-caret-position="311">
+              <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/MemberServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -298,7 +297,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StaticsDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/stadiumController/StaStaticsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/TicketServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/StadiumDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/StadiumServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/ManagerController/ManagerLoginController.java" />
@@ -322,18 +320,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManApplicationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/model/TicketCount.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/46c80caa-809d-403e-b961-4b6d9d02e5c1/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/DaoHelperImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StadiumDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/MemberDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/model/TicketPrice.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/model/StadiumShows.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/MemberDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/StatisticsDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/service/StaticsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/StaticsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManStaticsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/controller/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/MemberDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/TicketServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -783,16 +782,15 @@
       <workItem from="1520319324507" duration="33816000" />
       <workItem from="1520578029559" duration="94898000" />
       <workItem from="1521854924575" duration="40387000" />
-      <workItem from="1522157922872" duration="18665000" />
+      <workItem from="1522157922872" duration="22402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219118000" />
+    <option name="totallyTimeSpent" value="222855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -817,7 +815,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5368803" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21816881" sideWeight="0.7609756" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21816881" sideWeight="0.7609756" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1502146" sideWeight="0.23902439" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -945,7 +943,7 @@
           <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="61" />
+      <option name="time" value="65" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -954,32 +952,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/target/ticketServiceSystem/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8484">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1522202440326" expanded="true" signature="98752:98769" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/managerController/ManagerLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/springMVC-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1090,7 +1062,7 @@
         <state relative-caret-position="315">
           <caret line="21" column="59" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="21" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1100,7 +1072,7 @@
         <state relative-caret-position="315">
           <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1110,10 +1082,10 @@
         <state relative-caret-position="225">
           <caret line="26" column="50" lean-forward="false" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
           <folding>
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="false" />
+            <element signature="e#685#686#0" expanded="false" />
+            <element signature="e#735#736#0" expanded="false" />
+            <element signature="e#788#789#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1135,8 +1107,8 @@
         <state relative-caret-position="240">
           <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
           <folding>
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1146,7 +1118,7 @@
         <state relative-caret-position="207">
           <caret line="26" column="72" lean-forward="false" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1167,36 +1139,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManaLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/stadiumController/StaStaticsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/46c80caa-809d-403e-b961-4b6d9d02e5c1/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="137" lean-forward="false" selection-start-line="4" selection-start-column="137" selection-end-line="4" selection-end-column="160" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1208,47 +1154,6 @@
           <folding>
             <element signature="e#535#536#0" expanded="true" />
             <element signature="e#567#568#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/MemberDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <marker date="1521722578362" expanded="true" signature="1136:1172" ph="SELECT * fro... memberinfo" />
-            <marker date="1521722578362" expanded="true" signature="1609:1654" ph="insert INTO memberinfo... " />
-            <marker date="1521722578362" expanded="true" signature="2449:2479" ph="INSERT INTO userp... " />
-            <marker date="1521722578362" expanded="true" signature="2938:2984" ph="INSERT INTO discountcoupon... " />
-            <marker date="1521722578362" expanded="true" signature="3959:4012" ph="update membe... " />
-            <marker date="1521722578362" expanded="true" signature="4782:4819" ph="SELECT * FRO... memberinfo" />
-            <marker date="1521722578362" expanded="true" signature="5906:5953" ph="update membe... " />
-            <marker date="1521722578362" expanded="true" signature="6763:6803" ph="SELECT * FRO... discountcoupon" />
-            <marker date="1521722578362" expanded="true" signature="8392:8445" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="8580:8631" ph="UPDATE membe... " />
-            <marker date="1521722578362" expanded="true" signature="8817:8870" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="9005:9056" ph="UPDATE membe... " />
-            <marker date="1521722578362" expanded="true" signature="9242:9295" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="9430:9481" ph="UPDATE membe... " />
-            <marker date="1521722578362" expanded="true" signature="9667:9720" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="9855:9906" ph="UPDATE membe... " />
-            <marker date="1521722578362" expanded="true" signature="11241:11294" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="11479:11532" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="11717:11770" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="11955:12008" ph="UPDATE disco... " />
-            <marker date="1521722578362" expanded="true" signature="12746:12786" ph="UPDATE membe... " />
-            <marker date="1521722578362" expanded="true" signature="13516:13562" ph="SELECT consu... memberbill" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <marker date="1520155718092" expanded="true" signature="758:797" ph="select passw... userp" />
           </folding>
         </state>
       </provider>
@@ -1371,14 +1276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/MemberDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StadiumDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1396,42 +1293,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="178" column="14" lean-forward="false" selection-start-line="178" selection-start-column="14" selection-end-line="178" selection-end-column="14" />
-          <folding>
-            <marker date="1522201313379" expanded="true" signature="956:996" ph="select profi... profilt" />
-            <marker date="1522201313379" expanded="true" signature="1794:1956" ph="SELECT DATE_... " />
-            <marker date="1522201313379" expanded="true" signature="2820:2986" ph="SELECT DATE_... " />
-            <marker date="1522201313379" expanded="true" signature="3849:3882" ph="SELECT stadi... stadiuminfo" />
-            <marker date="1522201313379" expanded="true" signature="4970:5044" ph="SELECT count... memberinfo" />
-            <marker date="1522201313379" expanded="true" signature="5350:5425" ph="SELECT count... memberinfo" />
-            <marker date="1522201313379" expanded="true" signature="5731:5806" ph="SELECT count... memberinfo" />
-            <marker date="1522201313379" expanded="true" signature="6112:6187" ph="SELECT count... memberinfo" />
-            <marker date="1522201313379" expanded="true" signature="6493:6557" ph="SELECT count... memberinfo" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/StatisticsDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/StaticsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="141" column="17" lean-forward="true" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6235#6236#0" expanded="true" />
-            <element signature="e#6306#6307#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1444,20 +1311,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/memberController/BuyTicketController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/stadiumController/StaStaticsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="345">
+          <caret line="44" column="51" lean-forward="true" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManStaticsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="41" />
+        <state relative-caret-position="339">
+          <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/StaticsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="141" column="17" lean-forward="false" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6235#6236#0" expanded="true" />
+            <element signature="e#6306#6307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/StatisticsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="163" column="29" lean-forward="false" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+          <folding>
+            <marker date="1522202984068" expanded="true" signature="956:996" ph="select profi... profilt" />
+            <marker date="1522202984068" expanded="true" signature="1794:1956" ph="SELECT DATE_... " />
+            <marker date="1522202984068" expanded="true" signature="2820:2986" ph="SELECT DATE_... " />
+            <marker date="1522202984068" expanded="true" signature="3849:3882" ph="SELECT stadi... stadiuminfo" />
+            <marker date="1522202984068" expanded="true" signature="4970:5044" ph="SELECT count... memberinfo" />
+            <marker date="1522202984068" expanded="true" signature="5350:5425" ph="SELECT count... memberinfo" />
+            <marker date="1522202984068" expanded="true" signature="5731:5806" ph="SELECT count... memberinfo" />
+            <marker date="1522202984068" expanded="true" signature="6112:6187" ph="SELECT count... memberinfo" />
+            <marker date="1522202984068" expanded="true" signature="6493:6557" ph="SELECT count... memberinfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <marker date="1520155718092" expanded="true" signature="758:797" ph="select passw... userp" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/MemberServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/MemberDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/memberController/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="33" column="102" lean-forward="false" selection-start-line="33" selection-start-column="102" selection-end-line="33" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/manController/ManaLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/dao/impl/MemberDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <marker date="1522204665071" expanded="true" signature="1179:1215" ph="SELECT * fro... memberinfo" />
+            <marker date="1522204665071" expanded="true" signature="1652:1697" ph="insert INTO memberinfo... " />
+            <marker date="1522204665071" expanded="true" signature="2492:2522" ph="INSERT INTO userp... " />
+            <marker date="1522204665071" expanded="true" signature="2981:3026" ph="INSERT INTO discountcoupon... " />
+            <marker date="1522204665071" expanded="true" signature="3429:3470" ph="INSERT INTO memberbill... " />
+            <marker date="1522204665071" expanded="true" signature="4754:4805" ph="update membe... " />
+            <marker date="1522204665071" expanded="true" signature="5621:5658" ph="SELECT * FRO... memberinfo" />
+            <marker date="1522204665071" expanded="true" signature="6745:6792" ph="update membe... " />
+            <marker date="1522204665071" expanded="true" signature="7602:7642" ph="SELECT * FRO... discountcoupon" />
+            <marker date="1522204665071" expanded="true" signature="9231:9284" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="9419:9470" ph="UPDATE membe... " />
+            <marker date="1522204665071" expanded="true" signature="9656:9709" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="9844:9895" ph="UPDATE membe... " />
+            <marker date="1522204665071" expanded="true" signature="10081:10134" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="10269:10320" ph="UPDATE membe... " />
+            <marker date="1522204665071" expanded="true" signature="10506:10559" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="10694:10745" ph="UPDATE membe... " />
+            <marker date="1522204665071" expanded="true" signature="12080:12133" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="12318:12371" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="12556:12609" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="12794:12847" ph="UPDATE disco... " />
+            <marker date="1522204665071" expanded="true" signature="13585:13625" ph="UPDATE membe... " />
+            <marker date="1522204665071" expanded="true" signature="14355:14401" ph="SELECT consu... memberbill" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/controller/memberController/BuyTicketController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="124" column="46" lean-forward="false" selection-start-line="124" selection-start-column="35" selection-end-line="124" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mahanlei/service/impl/TicketServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1537#1545#0" expanded="true" />
+            <element signature="e#2368#2377#0" expanded="true" />
+            <element signature="e#3343#3349#0" expanded="true" />
+            <element signature="e#7722#7739#0" expanded="true" />
+            <element signature="e#8738#8749#0" expanded="true" />
           </folding>
         </state>
       </provider>
