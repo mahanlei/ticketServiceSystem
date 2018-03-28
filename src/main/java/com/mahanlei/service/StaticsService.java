@@ -1,6 +1,9 @@
 package com.mahanlei.service;
 
 import com.mahanlei.model.SoldTicket;
+import com.mahanlei.model.StadiumShows;
+import com.mahanlei.model.TicketCount;
+import com.mahanlei.model.TicketPrice;
 
 import java.util.List;
 
@@ -20,4 +23,8 @@ public interface StaticsService {
      */
     public double getProfit(String id);
 
+    public List<TicketCount> getTicketCount();
+    public  List<TicketPrice> getTicketPrice();
+    public List<StadiumShows> getStadiumShows();
+    public int[] countMemberByAge();
 }

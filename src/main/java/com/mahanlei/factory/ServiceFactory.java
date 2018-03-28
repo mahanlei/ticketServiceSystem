@@ -23,6 +23,10 @@ public class ServiceFactory {
         return SeatServiceImpl.getSeatService();
     }
     public static StaticsService getStaticsService(){
+
         return StaticsServiceImpl.getStaticsService();
+    }
+    public static ApplicationService getApplicationService(){
+        return ApplicationServiceImpl.getApplicationService();
     }
 }

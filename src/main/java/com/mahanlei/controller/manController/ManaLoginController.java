@@ -1,4 +1,4 @@
-package com.mahanlei.controller.managerController;
+package com.mahanlei.controller.manController;
 
 import com.mahanlei.factory.ServiceFactory;
 import com.mahanlei.service.UserService;
@@ -6,20 +6,16 @@ import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-
-@CrossOrigin(origins="http://localhost:8081")
-@RequestMapping(value = "/manager")
-public class ManagerLoginController {
+@CrossOrigin(origins="http://localhost:8081")//允许跨域请求
+public class ManaLoginController {
     UserService userService= ServiceFactory.getUserService();
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+
+    @RequestMapping(value = "/manLogin", method = RequestMethod.POST)
     public JSONObject manLogin(@RequestParam("id") String id,
                                @RequestParam("password") String paw){
         JSONObject r = new JSONObject();
         String passw =  userService.getPassw(id);
-        if(id==null){
-            r.put("code", "404");
-            r.put("msg", "用户名不能为空");
-        }
+
         if(passw!=null&&passw.equals(paw)){
             r.put("code", "200");
             r.put("msg", "登录成功");

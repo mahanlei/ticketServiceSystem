@@ -66,4 +66,6 @@ public interface MemberDao {
      * @return
      */
     public double getConsumption(String mid);
+
+
 }

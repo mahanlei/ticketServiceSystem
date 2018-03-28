@@ -23,4 +23,7 @@ public static SeatDao getSeatDao(){
 public static StatisticsDao getStatisticsDao(){
     return StatisticsDaoImpl.getStatisticsDao();
 }
+public static ApplicationDao getApplicationDao(){
+    return ApplicationDaoImpl.getApplicationDao();
+}
 }

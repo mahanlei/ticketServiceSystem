@@ -15,7 +15,13 @@ import java.util.Properties;
 
 public class DaoHelperImpl implements DaoHelper {
 
- private    String url="jdbc:mysql://localhost:3306/ticketSystem?useUnicode=true&characterEncoding=utf-8";
+    private static DaoHelperImpl daoHelper=new DaoHelperImpl();
+
+    public static DaoHelperImpl getDaoHelper() {
+        return daoHelper;
+    }
+
+    private    String url="jdbc:mysql://localhost:3306/ticketSystem?useUnicode=true&characterEncoding=utf-8";
  private    String username = "root";
  private    String password = "leilei";
  Connection connection;

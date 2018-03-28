@@ -18,7 +18,7 @@ public class StadiumDaoImpl implements StadiumDao {
     public static StadiumDaoImpl getStadiumDao() {
         return stadiumDao;
     }
-    DaoHelper daoHelper= new DaoHelperImpl();
+    DaoHelper daoHelper= DaoHelperImpl.getDaoHelper();
 
     public StadiumInfo getStadiumInfo(int stadiumId) {
         Connection connection=daoHelper.getConnection();
